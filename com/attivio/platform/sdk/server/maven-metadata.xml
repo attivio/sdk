@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.attivio.platform.sdk</groupId>
+  <artifactId>server</artifactId>
+  <versioning>
+    <versions>
+      <version>5.2.7-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20170312171601</lastUpdated>
+  </versioning>
+</metadata>
