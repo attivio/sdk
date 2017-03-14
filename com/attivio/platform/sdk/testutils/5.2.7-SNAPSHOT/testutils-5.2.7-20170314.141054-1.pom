@@ -20,7 +20,11 @@
       <groupId>com.attivio.platform.sdk</groupId>
       <artifactId>client</artifactId>
     </dependency>
-
+    <dependency>
+      <groupId>com.attivio.platform.sdk</groupId>
+      <artifactId>model</artifactId>
+    </dependency>
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
