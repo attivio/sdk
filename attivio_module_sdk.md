@@ -4,7 +4,7 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=0.1.0-SNAPSHOT
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=0.1.0
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -52,7 +52,3 @@ src/main/resources $ tree
 
 The `attivio.module.xml` file is located in a module's `src/main/resources` directory.  This file contains metadata about the module, including a description and declaration of the module's components, executables, and connectors.
 
-
-
-
-    
