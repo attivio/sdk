@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.attivio.platform</groupId>
+  <artifactId>sdk</artifactId>
+  <version>4.4.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170325.212602</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20170325212602</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>4.4.1-20170325.212602-1</value>
+        <updated>20170325212602</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
