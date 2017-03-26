@@ -1,0 +1,123 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <parent>
+    <groupId>com.attivio.platform</groupId>
+    <artifactId>sdk</artifactId>
+    <version>4.4.0</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.attivio.platform.sdk</groupId>
+  <artifactId>model</artifactId>
+  <name>platform/sdk/model</name>
+
+  <properties>
+    <topDir>../..</topDir>
+    <gwt.copy.src.exclude>nothing</gwt.copy.src.exclude> <!-- needed for eclipse tests to run -->
+    <javac.sourceVersion>1.6</javac.sourceVersion>
+  </properties>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <modules>
+            <param>com.attivio.SdkModel</param>
+          </modules>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Generate AieModel.gwt.xml file for ${baseName}</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <taskdef resource="ise/antelope/tasks/antlib.xml"
+                         classpathref="maven.plugin.classpath"/>
+                <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+
+                <property name="xmlFile" value="src/com/attivio/SdkModel.gwt.xml"/>
+                <property name="templateFile" value="templates/SdkModel.gwt.xml-template"/>
+                <echo>Generating ${xmlFile}</echo>
+                <copy file="${templateFile}" tofile="${xmlFile}" overwrite="true"/>
+                <property name="NL" value="&#13;&#10;"/>
+
+                <for list="messages,model,sdk,transport,util" param="dir">
+                  <sequential>
+                    <fileset dir="src/com/attivio/@{dir}" id="myfileset">
+                      <include name="**/*.java" />
+                    </fileset>
+                    <unset name="myfile"/>
+                    <pathconvert pathsep="&#xA;" property="myfile" refid="myfileset">
+                        <chainedmapper>
+                          <mapper type="flatten" />
+                          <mapper type="regexp" from="(.*)(\.java)" to="\1" />
+                          <mapper type="regexp" from="(.*)" to="&lt;include name=&#34;**/\1\.class&#34; \/&gt;&lt;include name=&#34;**\/\1.java&#34; \/&gt;" />
+                        </chainedmapper>
+                    </pathconvert>
+
+                    <if>
+                       <not>
+                         <equals arg1="@{dir}" arg2="messages" />
+                       </not>
+                       <then>
+                         <echo file="${xmlFile}" append="true">&lt;&#47;source&gt;${NL}</echo>
+                       </then>
+                    </if>
+                    <echo file="${xmlFile}" append="true">&lt;source path='@{dir}'&gt;${NL}</echo>
+                    <echo file="${xmlFile}" append="true">${myfile}</echo>
+                    <echo file="${xmlFile}" append="true">${NL}</echo>
+
+                  </sequential>
+                </for>
+                <echo file="src/com/attivio/SdkModel.gwt.xml" append="true">&lt;&#47;source&gt;${NL}&lt;&#47;module&gt;</echo>
+
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+</project> 
