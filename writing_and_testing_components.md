@@ -33,25 +33,42 @@ Once you have chosen a component type, you can also add a number of mix-in inter
 | `AfterAllLocalInstancesStarted` | Provides a hook for the component to do initialization after all instances of this component have been started (`Startable.startComponent()` has been called). |
 | `AfterLocalNodeStartup` | Provides a hook for the component to do initialization after all components in the system have been started. |
 
-### Component Properties
+### Component Configuration
 
 | Name | Description |
 | --- | --- |
+| `HasBackoffLocaleProperty` | |
+| `HasCaseModeProperty` | |
+| `HasDropDocumentOnExceptionProperty` | |
+| `HasFieldMappingProperty` | |
+| `HasFieldsProperty` | |
+| `HasInputListProperty` | |
+| `HasInputProperty` | |
+| `HasOverwriteProperty` | |
+| `HasQueryLanguageProperty` | |
+| `HasSchemaNameProperty` | |
+| `HasTokenizerProperty` | |
 
 ### Miscellaneous
 
 | Name | Description |
 | --- | --- |
-| `ComponentNameAware` | |
-| `SchemaUtilAware` | |
-| `QualifiedComponentNameAware` | |
-| `ProvidesProcessingFeedback` | |
 | `AieLoggerAware` | No longer recommended.  Use [slf4j APIs](https://www.slf4j.org/api/org/slf4j/Logger.html) instead |
+| `ComponentNameAware` | |
+| `ProvidesProcessingFeedback` | |
+| `QualifiedComponentNameAware` | |
+| `SchemaUtilAware` | |
+| `SystemEventPublisherAware` | |
 
 ### Annotations
 
 | Name | Description |
 | --- | --- |
+| `MultiOutputDocumentTransformerMode` | |
+| `SingleInstancePerCluster` | |
+| `SingleInstancePerNamedComponent` | |
+| `SingleInstancePerNode` | |
+| `ThreadSafe` | |
 
 ## Testing your component
 
