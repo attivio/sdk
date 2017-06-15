@@ -55,7 +55,7 @@
     <netty.attivio.version>3.6.6.Final</netty.attivio.version>
     <curator.attivio.version>2.9.1</curator.attivio.version>
     <hadoop.attivio.version>2.7.2</hadoop.attivio.version>
-    <hbase.attivio.version>1.1.2</hbase.attivio.version>
+    <hbase.attivio.version>1.2.5</hbase.attivio.version>
     <hive.attivio.version>1.1.0</hive.attivio.version>
     <twitter.parquet.attivio.version>1.6.0</twitter.parquet.attivio.version>
     <hive.attivio.compat-libthrift.version>0.9.0</hive.attivio.compat-libthrift.version>
@@ -63,6 +63,7 @@
     <jline.attivio.version>2.11</jline.attivio.version>
     <gson.attivio.version>2.2.3</gson.attivio.version>
 
+    <sunmail.version>1.4.5</sunmail.version>
     <jaxb.version>2.2.7</jaxb.version>
     <spring.version>4.2.5.RELEASE</spring.version>
     <springSecurity.version>4.1.0.RELEASE</springSecurity.version>
@@ -128,7 +129,7 @@
     <!-- Must use 1.7.1 to work with antrun plugin -->
     <org.apache.ant.version>1.7.1</org.apache.ant.version>
     <org.apache.ant.jsch.version>0.1.38</org.apache.ant.jsch.version>
-    <log4j.version>1.2.17</log4j.version>
+    <log4j.version>1.2.15</log4j.version>
     <dom4j.version>1.6.1</dom4j.version>
     <slf4j.version>1.7.21</slf4j.version>
     <dom4j.jaxen.version>1.1-beta-6</dom4j.jaxen.version>
@@ -260,7 +261,7 @@
     <minmem>512m</minmem> <!-- -Xms setting -->
     <javaMemoryOpts>-Xmx2048m -Xms512m</javaMemoryOpts>
 
-    <alljvmargs>${javaMemoryOpts} ${cpuarchoption} -Djava.net.preferIPv4Stack=true -Dattivio.project=${project.basedir} -DfakeSysProp=${java.agentlib} ${custom.agentlib} -Dlog4j.debug=${log4j.debug} -Dattivio.baseport=${attivio.baseport} -Dattivio.log.directory=${attivio.log.directory} -Dattivio.test.index.dir=${attivio.test.index.dir} -Dattivio.data.directory=${attivio.data.directory} -Dattivio.tmp.directory=${attivio.tmp.directory} -Djunit.default.timeout=${junit.default.timeout} -Dattivio.log.level.ingest=${attivio.log.level.ingest} -Dattivio.junit.shutdown=${attivio.junit.shutdown} -Dattivio.junit.jmx=${attivio.junit.jmx} -Dattivio.log.level=${attivio.log.level}</alljvmargs>
+    <alljvmargs>${javaMemoryOpts} ${cpuarchoption} -Dattivio.project=${project.basedir} -DfakeSysProp=${java.agentlib} ${custom.agentlib} -Dlog4j.debug=${log4j.debug} -Dattivio.baseport=${attivio.baseport} -Dattivio.log.directory=${attivio.log.directory} -Dattivio.test.index.dir=${attivio.test.index.dir} -Dattivio.data.directory=${attivio.data.directory} -Dattivio.tmp.directory=${attivio.tmp.directory} -Djunit.default.timeout=${junit.default.timeout} -Dattivio.log.level.ingest=${attivio.log.level.ingest} -Dattivio.junit.shutdown=${attivio.junit.shutdown} -Dattivio.junit.jmx=${attivio.junit.jmx} -Dattivio.log.level=${attivio.log.level}</alljvmargs>
     <jvmargs>${alljvmargs}</jvmargs>
 
     <!-- Selenium Support -->
@@ -867,36 +868,6 @@
 
       <dependency>
         <groupId>com.attivio.platform.modules</groupId>
-        <artifactId>quickstart</artifactId>
-        <version>${aieProjectVersion}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.attivio.platform.modules</groupId>
-        <artifactId>quickstart</artifactId>
-        <version>${aieProjectVersion}</version>
-        <classifier>tests</classifier>
-      </dependency>
-      <dependency>
-        <groupId>com.attivio.platform.modules</groupId>
-        <artifactId>quickstart</artifactId>
-        <version>${aieProjectVersion}</version>
-        <classifier>${os.full}-aieDist</classifier>
-        <type>${distCompressed.ext}</type>
-      </dependency>
-      <dependency>
-        <groupId>com.attivio.platform.modules</groupId>
-        <artifactId>asap</artifactId>
-        <version>${aieProjectVersion}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.attivio.platform.modules</groupId>
-        <artifactId>asap</artifactId>
-        <version>${aieProjectVersion}</version>
-        <classifier>${os.full}-aieDist</classifier>
-        <type>${distCompressed.ext}</type>
-      </dependency>
-      <dependency>
-        <groupId>com.attivio.platform.modules</groupId>
         <artifactId>joinfinder</artifactId>
         <version>${aieProjectVersion}</version>
       </dependency>
@@ -1313,26 +1284,14 @@
 
       <dependency>
         <groupId>com.attivio.platform.sdk</groupId>
-        <artifactId>testutils</artifactId>
-        <version>${aieProjectVersion}</version>
-	<exclusions>
-	  <exclusion>
-	    <groupId>junit</groupId>
-	    <artifactId>junit</artifactId>
-	  </exclusion>
-	</exclusions>
-      </dependency>
-
-      <dependency>
-        <groupId>com.attivio.platform.sdk</groupId>
         <artifactId>testutilpackaging</artifactId>
         <version>${aieProjectVersion}</version>
       </dependency>
 
-      <dependency>
+	  <dependency>
         <groupId>com.attivio.platform.sdk</groupId>
         <artifactId>server</artifactId>
-	<version>${aieProjectVersion}</version>
+	    <version>${aieProjectVersion}</version>
       </dependency>
       <dependency>
         <groupId>com.attivio.platform.sdk</groupId>
@@ -2104,6 +2063,24 @@
       </dependency>
       <dependency>
         <groupId>com.attivio.platform.modules</groupId>
+        <artifactId>textextraction</artifactId>
+        <version>${aieProjectVersion}</version>
+        <classifier>${os.full}-aieDist</classifier>
+        <type>${distCompressed.ext}</type>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.platform.modules</groupId>
+        <artifactId>textextraction</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.platform.modules</groupId>
+        <artifactId>textextraction</artifactId>
+        <version>${aieProjectVersion}</version>
+        <classifier>tests</classifier>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.platform.modules</groupId>
         <artifactId>clib</artifactId>
         <version>${aieProjectVersion}</version>
         <classifier>${os.full}-aieDist</classifier>
@@ -2820,6 +2797,11 @@
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-common</artifactId>
+      <version>${hbase.attivio.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-common</artifactId>
       <classifier>tests</classifier>
       <version>${hbase.attivio.version}</version>
       <exclusions>
@@ -2847,7 +2829,7 @@
         <exclusion><groupId>com.github.stephenc.findbugs</groupId><artifactId>findbugs-annotations</artifactId></exclusion>
       </exclusions>
     </dependency>
-
+    
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-client</artifactId>
@@ -3040,6 +3022,17 @@
           <exclusion><groupId>org.apache.curator</groupId><artifactId>curator-client</artifactId></exclusion>
           <exclusion><groupId>org.apache.curator</groupId><artifactId>curator-recipes</artifactId></exclusion>
         </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-distcp</artifactId>
+        <version>${hadoop.attivio.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-yarn-server-resourcemanager</artifactId>
+        <version>${hadoop.attivio.version}</version>
       </dependency>
 
       <dependency>
@@ -3669,11 +3662,6 @@
         <version>1.6</version>
       </dependency>
       <dependency>
-	<groupId>org.apache.commons</groupId>
-	<artifactId>commons-collections4</artifactId>
-	<version>4.1</version>	
-      </dependency>
-      <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-compress</artifactId>
         <version>1.1</version>
@@ -3792,6 +3780,13 @@
         </exclusions>
 
       </dependency>
+
+      <dependency>
+        <groupId>com.github.zafarkhaja</groupId>
+        <artifactId>java-semver</artifactId>
+        <version>0.9.0</version>
+      </dependency>
+      
       <dependency>
         <groupId>dom4j</groupId>
         <artifactId>jaxen</artifactId>
@@ -4402,6 +4397,22 @@
          <type>jar</type>
       </dependency>
       <dependency>
+         <groupId>com.attivio.3rdparty.full</groupId>
+         <artifactId>htmlunit-2.12-aie</artifactId>
+         <version>${aieProjectVersion}</version>
+         <exclusions>
+			<exclusion>
+			  <!-- use our own custom version of nekohtml -->
+              <groupId>net.sourceforge.nekohtml</groupId>
+              <artifactId>nekohtml</artifactId>
+			</exclusion>
+            <exclusion>
+              <groupId>commons-logging</groupId>
+              <artifactId>commons-logging</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
+      <dependency>
         <groupId>apache-taglibs</groupId>
         <artifactId>standard</artifactId>
         <version>2.4</version>
@@ -4432,15 +4443,66 @@
         <version>2.5</version>
       </dependency>
       <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcmail-jdk14</artifactId>
+        <version>1.43.bundle2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk14</artifactId>
+        <version>1.43.bundle2</version>
+      </dependency>
+      <dependency>
 	<groupId>javax.mail</groupId>
 	<artifactId>mail</artifactId>
-	<version>1.4.5</version>
+	<version>${sunmail.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.sun.mail</groupId>
+         <artifactId>mailapi</artifactId>
+         <version>${sunmail.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.sun.mail</groupId>
+         <artifactId>dsn</artifactId>
+         <version>${sunmail.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.sun.mail</groupId>
+         <artifactId>imap</artifactId>
+         <version>${sunmail.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.sun.mail</groupId>
+         <artifactId>pop3</artifactId>
+         <version>${sunmail.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.sun.mail</groupId>
+         <artifactId>smtp</artifactId>
+         <version>${sunmail.version}</version>
       </dependency>
       <dependency>
          <groupId>com.sun</groupId>
          <artifactId>tools</artifactId>
          <version>1.6.0_13</version>
       </dependency>
+      <dependency>
+         <groupId>de.intrasys.cwt</groupId>
+         <artifactId>iscwt</artifactId>
+         <version>5.2.6</version>
+      </dependency>
+      <dependency>
+         <groupId>de.intrasys.tools</groupId>
+         <artifactId>isrt</artifactId>
+         <version>4.7</version>
+      </dependency>
+      <dependency>
+         <groupId>jacob</groupId>
+         <artifactId>jacob</artifactId>
+         <version>1.7</version>
+      </dependency>
+
       <dependency>
          <groupId>javax.activation</groupId>
          <artifactId>activation</artifactId>
@@ -4491,6 +4553,11 @@
         <version>1.7.2</version>
       </dependency>
       <dependency>
+         <groupId>lotusnotes</groupId>
+         <artifactId>Notes</artifactId>
+         <version>1</version>
+      </dependency>
+      <dependency>
         <groupId>org.apache.cxf</groupId>
         <artifactId>cxf</artifactId>
         <version>${cxf.version}</version>
@@ -4499,6 +4566,11 @@
         <groupId>org.apache.axis</groupId>
         <artifactId>axis</artifactId>
         <version>1.4</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-email</artifactId>
+         <version>1.3.2</version>
       </dependency>
       <dependency>
         <groupId>org.apache.jmeter</groupId>
@@ -4556,6 +4628,16 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+       <groupId>org.apache.poi</groupId>
+       <artifactId>poi-ooxml</artifactId>
+       <version>3.7</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.poi</groupId>
+         <artifactId>poi-contrib</artifactId>
+         <version>3.2-NIObackport-20110105</version>
+      </dependency>
+      <dependency>
         <groupId>org.apache.mina</groupId>
         <artifactId>mina-core</artifactId>
         <version>1.1.3</version>
@@ -4604,6 +4686,10 @@
               <groupId>commons-logging</groupId>
               <artifactId>commons-logging</artifactId>
             </exclusion>
+            <exclusion>
+              <groupId>net.sourceforge.htmlunit</groupId>
+              <artifactId>htmlunit</artifactId>
+            </exclusion>
           </exclusions>
       </dependency>
       <dependency>
@@ -4637,6 +4723,11 @@
         <version>gwt-2.3</version>
       </dependency>
       <dependency>
+         <groupId>org.jpedal</groupId>
+         <artifactId>jbig2</artifactId>
+         <version>1.5.0_12-b04</version>
+      </dependency>
+      <dependency>
          <groupId>org.osgi</groupId>
          <artifactId>org.osgi.core</artifactId>
          <version>4.1.0</version>
@@ -4667,6 +4758,77 @@
 	<version>${fastutil.attivio.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.semanticdesktop.aperture</groupId>
+        <artifactId>aperture-runtime-optional</artifactId>
+        <version>1.5.0</version>
+        <type>pom</type>
+        <exclusions>
+          <exclusion>
+            <artifactId>slf4j-jdk14</artifactId>
+            <groupId>org.slf4j</groupId>
+          </exclusion>
+      <exclusion>
+        <artifactId>org.bibsonomy</artifactId>
+      <groupId>bibsonomy-rest-client</groupId>
+      </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>aperture</artifactId>
+         <version>1.0.1-beta</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>applewrapper</artifactId>
+         <version>0.2</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>demork</artifactId>
+         <version>2.0</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>htmlparser</artifactId>
+         <version>1.6</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>ical4j</artifactId>
+         <version>cvs20061019</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>metadata-extractor</artifactId>
+         <version>2.4.0-beta-1</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>openrdf-sesame</artifactId>
+         <version>2.0-beta4-onejar</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>org.openrdf.rdf2go</artifactId>
+         <version>4.4.1.2682</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>rdf2go</artifactId>
+         <version>4.4.1</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>rdf2go-impl-base</artifactId>
+         <version>4.4.1</version>
+      </dependency>
+      <dependency>
+         <groupId>org.semanticdesktop.aperture</groupId>
+         <artifactId>winlaf</artifactId>
+         <version>0.5.1</version>
+      </dependency>
+      <dependency>
         <groupId>org.netezza</groupId>
         <artifactId>jdbc</artifactId>
         <version>6.0.2.14945</version>
@@ -4681,6 +4843,11 @@
             <groupId>commons-logging</groupId>
           </exclusion>
         </exclusions>
+      </dependency>
+      <dependency>
+         <groupId>rtf2fo</groupId>
+         <artifactId>rtf2fo</artifactId>
+         <version>3.4.4d</version>
       </dependency>
       <dependency>
         <groupId>slide</groupId>
@@ -5008,11 +5175,28 @@
       </dependency>
 
       <dependency>
-	<groupId>com.robbypond</groupId>
-	<artifactId>boilerpipe</artifactId>
-	<version>1.2.3</version>
+        <groupId>com.attivio.3rdparty.full</groupId>
+        <artifactId>boilerpipe-1.2.0-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+        <exclusions>
+            <exclusion>
+                <groupId>apache-xerces</groupId>
+                <artifactId>xml-apis</artifactId>
+            </exclusion>
+        </exclusions>
       </dependency>
-      
+      <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>nekohtml-1.9.18-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+        <exclusions>
+            <exclusion>
+              <groupId>xerces</groupId>
+              <artifactId>xercesImpl</artifactId>
+            </exclusion>
+        </exclusions>
+      </dependency>
+
       <dependency>
         <groupId>com.attivio.3rdparty.partial</groupId>
         <artifactId>lucene-core-5.2.1-aie</artifactId>
@@ -5020,17 +5204,27 @@
       </dependency>
 
       <dependency>
-	<groupId>com.googlecode.juniversalchardet</groupId>
-	<artifactId>juniversalchardet</artifactId>
-	<version>1.0.3</version>
+        <groupId>net.sourceforge.juniversalchardet</groupId>
+        <artifactId>juniversalchardet</artifactId>
+        <version>1.0.3.bundle</version>
       </dependency>
 
       <dependency>
-	<groupId>org.apache.poi</groupId>
-	<artifactId>poi</artifactId>
-	<version>3.15</version>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>aperture-core-1.5.0-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+    <exclusions>
+      <exclusion>
+        <artifactId>org.bibsonomy</artifactId>
+      <groupId>bibsonomy-rest-client</groupId>
+      </exclusion>
+        </exclusions>
       </dependency>
-      
+      <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>clapper-javautil-3.1.1-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
       <dependency>
         <groupId>com.attivio.3rdparty.partial</groupId>
         <artifactId>commons-cli-1.1-aie</artifactId>
@@ -5053,14 +5247,13 @@
       </dependency>
       <dependency>
         <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>domingo-1.5.1-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
         <artifactId>gwt-dev-2.5.1-aie</artifactId>
         <version>${aieProjectVersion}</version>
-	<exclusions>
-	  <exclusion>
-            <groupId>net.sourceforge.nekohtml</groupId>
-            <artifactId>nekohtml</artifactId>
-	  </exclusion>
-	</exclusions>  
       </dependency>
       <dependency>
         <groupId>com.attivio.3rdparty.partial</groupId>
@@ -5085,8 +5278,18 @@
         <version>${aieProjectVersion}</version>
       </dependency>
       <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>jpod-5.2-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
         <groupId>com.attivio.3rdparty.full</groupId>
         <artifactId>jqueryslider-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>jtidy-r938-aie</artifactId>
         <version>${aieProjectVersion}</version>
       </dependency>
       <dependency>
@@ -5100,8 +5303,33 @@
         <version>${aieProjectVersion}</version>
       </dependency>
       <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>log4j-1.2.15-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
         <groupId>com.attivio.3rdparty.full</groupId>
         <artifactId>mule-1.4.4-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>poi-3.2-NIObackport-20110105-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>poi-scratchpad-3.2-NIObackport-20110105-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>tm-extractors-1.0-aie</artifactId>
+        <version>${aieProjectVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.attivio.3rdparty.partial</groupId>
+        <artifactId>unrar-alpha-0.1-aie</artifactId>
         <version>${aieProjectVersion}</version>
       </dependency>
       <dependency>
@@ -5467,30 +5695,30 @@
 	<pluginManagement>
 	  <plugins>
 	    <plugin>
-	      <!-- Don't copy sources when creating the SDK repo -->
-	      <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-source-plugin</artifactId>
-	      <version>2.2.1</version>
-	      <configuration>
+              <!-- Don't copy sources when creating the SDK repo -->
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-source-plugin</artifactId>
+              <version>2.2.1</version>
+              <configuration>
 		<skipSource>true</skipSource>
-	      </configuration>
+              </configuration>
 	    </plugin>
 	    <plugin>
-	      <!-- When creating the SDK repo, deploy targets the shared SDK repo -->
-	      <artifactId>maven-deploy-plugin</artifactId>
-	      <version>2.8.1</version>
-	      <configuration>
+              <!-- When creating the SDK repo, deploy targets the shared SDK repo -->
+              <artifactId>maven-deploy-plugin</artifactId>
+              <version>2.8.1</version>
+              <configuration>
 		<altDeploymentRepository>internal.repo::default::file://${top.dir}/target/mvn-repo</altDeploymentRepository>
-	      </configuration>
+              </configuration>
 	    </plugin>
-	  </plugins>  
+	  </plugins>
 	</pluginManagement>
 	<plugins>
 	  <plugin>
 	    <!-- Copy the .md files for the SDK repo (the documentation on how to use it) -->
 	    <artifactId>maven-resources-plugin</artifactId>
 	    <executions>
-	      <execution>
+              <execution>
 		<id>copy public SDK documentation</id>
 		<phase>generate-resources</phase>
 		<goals>
@@ -5505,7 +5733,7 @@
                     </resource>
 		  </resources>
 		</configuration>
-	      </execution>
+              </execution>
 	    </executions>
 	  </plugin>
 	</plugins>
@@ -5518,14 +5746,14 @@
 	<pluginManagement>
 	  <plugins>
 	    <plugin>
-	      <!-- When creating the SDK repo, deploy targets the shared SDK repo -->
-	      <artifactId>maven-deploy-plugin</artifactId>
-	      <version>2.8.1</version>
-	      <configuration>
+              <!-- When creating the SDK repo, deploy targets the shared SDK repo -->
+              <artifactId>maven-deploy-plugin</artifactId>
+              <version>2.8.1</version>
+              <configuration>
 		<altDeploymentRepository>internal.repo::default::file://${top.dir}/target/mvn-repo</altDeploymentRepository>
-	      </configuration>
+              </configuration>
 	    </plugin>
-	  </plugins>  
+	  </plugins>
 	</pluginManagement>
 	<plugins>
 	  <plugin>
@@ -5534,25 +5762,25 @@
             <artifactId>site-maven-plugin</artifactId>
             <version>0.12</version>
             <configuration>
-	      <message>Maven artifacts for ${project.version}</message>
-	      <noJekyll>true</noJekyll>
-	      <outputDirectory>${top.dir}/target/mvn-repo</outputDirectory> 
-	      <branch>refs/heads/5.2</branch>
-	      <includes>
+              <message>Maven artifacts for ${project.version}</message>
+              <noJekyll>true</noJekyll>
+              <outputDirectory>${top.dir}/target/mvn-repo</outputDirectory>
+              <branch>refs/heads/5.2</branch>
+              <includes>
 		<include>**/*</include>
-	      </includes>
-	      <repositoryName>sdk</repositoryName>      <!-- github repo name -->
-	      <repositoryOwner>attivio</repositoryOwner>    <!-- github username  -->
-	      <!--<host>https://git.attivio.com/api/v3</host>-->
+              </includes>
+              <repositoryName>sdk</repositoryName>      <!-- github repo name -->
+              <repositoryOwner>attivio</repositoryOwner>    <!-- github username  -->
+              <!--<host>https://git.attivio.com/api/v3</host>-->
             </configuration>
             <executions>
-	      <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
-	      <execution>
+              <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+              <execution>
                 <goals>
                   <goal>site</goal>
                 </goals>
                 <phase>deploy</phase>
-	      </execution>
+              </execution>
             </executions>
           </plugin>
 	</plugins>
@@ -9074,7 +9302,7 @@ jdk in use: ${java.version} from ${java.home}
           </execution>
         </executions>
       </plugin>
-      
+
       <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
