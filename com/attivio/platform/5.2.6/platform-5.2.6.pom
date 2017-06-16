@@ -4490,7 +4490,7 @@
       <dependency>
          <groupId>de.intrasys.cwt</groupId>
          <artifactId>iscwt</artifactId>
-         <version>5.2.6</version>
+         <version>5.2</version>
       </dependency>
       <dependency>
          <groupId>de.intrasys.tools</groupId>

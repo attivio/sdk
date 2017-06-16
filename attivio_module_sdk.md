@@ -28,7 +28,7 @@ Modules can be added to your Attivio installation (in which case the _must_ be i
 
     createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
-To add your module to your installation, the module zip or jar should be installed by running `aie-exec moduleManager`.  This program can list, install, and remove add-on modules.  Use of the `moduleManager` requires 5.2.6 patch level 191 or greater.
+To add your module to your installation, the module zip or jar should be installed by running `aie-exec com.attivio.app.config.modules.ModulesManager`.  This program can list, install, and remove add-on modules.  Use of the `moduleManager` requires 5.2.6 patch level 191 or greater.
 
 ## Module resources
 
