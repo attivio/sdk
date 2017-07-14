@@ -4,7 +4,7 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.2.6.0
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.0
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -62,19 +62,22 @@ Format:
 
 | Field | Type | Description |
 | --- | --- | --- |
-| name | String | Name of the module |
+| connectors | {String,String} | A map of connector name to the java class which implements the connector. |
 | description | String | Description of the module |
-| moduleVersion | String | Version string for the module, using the Semantic Versioning [specification](http://semver.org/).  Module versions are independent of the Attivio platform version |
-| requiredPlatformVersion | String | A version requirement specification String.  The platform version must match in order to install the module.  A plain version number (e.g. `5.2.6`) requires an exact match.  `>`, `<`, `>=`, and `<=` may be used for specifying ranges.  For example `>=5.2` will match any version >= to `5.2`, including `5.2.6`, `5.5`, and `6.0`.  A range may be specified by including a second condition.  For example `>=5.2.6 <6` will allow any 5 release after 5.2.6 and before 6.0.  Full details available [here](https://github.com/zafarkhaja/jsemver#semver-expressions-api-ranges) |
-| minimumPatchLevel | int | A number indicating the minimum patch that must be installed in order to install the module. |
+| executables | String | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
 | filesToDelete | [String] | A list of file names that will be removed from the installation.  File names are relative to the Attivio installation directory.  All 'removed' files are actually backed up to the module so that they may be restored if the module is removed. |
+| licensed | boolean | Whether or not use of this module requires an additional license. |
+| minimumPatchLevel | int | A number indicating the minimum patch that must be installed in order to install the module. |
+| moduleVersion | String | Version string for the module, using the Semantic Versioning [specification](http://semver.org/).  Module versions are independent of the Attivio platform version.  In particular, modules with a major version of 0 (e.g., 0.1.3) are experimental and unstable with respect to API.  Support of such modules is not part of Attivio standard support and requires a specific addendum or SOW. |
+| name | String | Name of the module |
 | newFiles | {String,String} | A map of new files to be installed.  The key specifies a Attivio installation relative path to be linked to a module relative path that is supplied by the module.  If the key path exists it will be backed up in the module for later restoration if the module is removed. |
+| requiredPlatformVersion | String | A version requirement specification String.  The platform version must match in order to install the module.  A plain version number (e.g. `5.2.6`) requires an exact match.  `>`, `<`, `>=`, and `<=` may be used for specifying ranges.  For example `>=5.2` will match any version >= to `5.2`, including `5.2.6`, `5.5`, and `6.0`.  A range may be specified by including a second condition.  For example `>=5.2.6 <6` will allow any 5 release after 5.2.6 and before 6.0.  Full details available [here](https://github.com/zafarkhaja/jsemver#semver-expressions-api-ranges) |
 
 Example:
 
     {
       "name":"cloudera-5.10.1",
-      "moduleVersion":"1.0.0",
+      "moduleVersion":"0.1.0",
       "requiredPlatformVersion":">=5.2.6",
       "minimumPatchLevel":0,
       "description":"Replaces default Hadoop libraries with Cloudera 5.10.1 version",
@@ -88,3 +91,8 @@ Example:
     }
 
 This module will supply a new version of the hadoop-annotation jar, by creating a softlink from `ATTIVIO_HOME/lib/hadoop-annotations.jar` to `ATTIVIO_HOME/modules/cloudera-5.10.1/lib/hadoop-annotations-2.6.0-cdh5.10.1.jar`.  Files `ATTIVIO_HOME/lib/hadoop-annotations-2.7.2.jar` and `ATTIVIO_HOME/lib/hadoop-annotations-2.7.3.jar` will be moved to a backup directory for later restoration if they exist.  This module does not care about patch level, but does require that the Attivio version is 5.2.6 or later.
+
+## Adding your module to source control
+
+Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.
+1.
