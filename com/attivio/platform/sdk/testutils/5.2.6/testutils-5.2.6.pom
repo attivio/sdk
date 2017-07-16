@@ -24,10 +24,11 @@
       <groupId>com.attivio.platform.sdk</groupId>
       <artifactId>model</artifactId>
     </dependency>
-    
+
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -49,4 +50,3 @@
     </plugins>
   </build>
 </project>
-
