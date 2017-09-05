@@ -4,7 +4,7 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.2.6.0
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.1
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -28,7 +28,7 @@ Modules can be added to your Attivio installation (in which case the _must_ be i
 
     createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
-To add your module to your installation, the module zip or jar should be installed by running `aie-exec moduleManager`.  This program can list, install, and remove add-on modules.
+To add your module to your installation, the module *zip* should be installed by running `aie-exec moduleManager`.  This program can list, install, and remove add-on modules.
 
 ## Module resources
 
@@ -94,4 +94,5 @@ This module will supply a new version of the hadoop-annotation jar, by creating 
 
 ## Adding your module to source control
 
-Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.  Attivio modules are located [here](https://git.attivio.com/attivio-modules).
+Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.
+1.
