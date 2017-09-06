@@ -4,7 +4,7 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.0
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.1
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -28,7 +28,7 @@ Modules can be added to your Attivio installation (in which case the _must_ be i
 
     createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
-To add your module to your installation, the module zip or jar should be installed by running `aie-exec moduleManager`.  This program can list, install, and remove add-on modules.
+To add your module to your installation, the module *zip* should be installed by running `aie-exec moduleManager`.  This program can list, install, and remove add-on modules.
 
 ## Module resources
 
