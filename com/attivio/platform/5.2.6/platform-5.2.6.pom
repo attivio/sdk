@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git@git.attivio.com:attivio/platform.git</connection>
     <developerConnection>scm:git:git@git.attivio.com:attivio/platform.git</developerConnection>
-    <url>https://git.attivio.com/attivio/platform/develop</url>
+    <url>https://git.attivio.com/attivio/platform/5.2</url>
   </scm>
   <properties>
     <attivio.version.designator></attivio.version.designator>

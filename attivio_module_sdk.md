@@ -4,7 +4,7 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.2.6.2
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.2.6.3
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -28,7 +28,7 @@ Modules can be added to your Attivio installation (in which case the _must_ be i
 
     createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
-To add your module to your installation, the module zip or jar should be installed by running `aie-exec com.attivio.app.config.modules.ModulesManager`.  This program can list, install, and remove add-on modules.  Use of the `moduleManager` requires 5.2.6 patch level 191 or greater.
+To add your module to your installation, the module *zip* from the target directory should be installed by running `aie-exec com.attivio.app.config.modules.ModulesManager`.  This program can list, install, and remove add-on modules.  Use of the `moduleManager` requires 5.2.6 patch level 191 or greater.
 
 ## Module resources
 
@@ -65,7 +65,7 @@ Format:
 | name | String | Name of the module |
 | description | String | Description of the module |
 | moduleVersion | String | Version string for the module, using the Semantic Versioning [specification](http://semver.org/).  Module versions are independent of the Attivio platform version |
-| requiredPlatformVersion | String | A version requirement specification String.  The platform version must match in order to install the module.  A plain version number (e.g. `5.2.6`) requires an exact match.  `>`, `<`, `>=`, and `<=` may be used for specifying ranges.  For example `>=5.2` will match any version >= to `5.2`, including `5.2.6`, `5.5`, and `6.0`.  A range may be specified by including a second condition.  For example `>=5.2.6 <6` will allow any 5 release after 5.2.6 and before 6.0.  Full details available [here](https://github.com/zafarkhaja/jsemver#semver-expressions-api-ranges) |
+| requiredPlatformVersion | String | A version requirement specification String.  The platform version must match in order to install the module.  A plain version number (e.g. `5.2.6`) requires an exact match.  `>`, `<`, `>=`, and `<=` may be used for specifying ranges.  For example `>=5.2` will match any version >= to `5.2`, including `5.2.6`, `5.5`, and `6.0`.  A range may be specified by including a second condition.  For example `>=5.2.6 & <6` will allow any 5 release after 5.2.6 and before 6.0.  Full details available [here](https://github.com/zafarkhaja/jsemver#semver-expressions-api-ranges) |
 | minimumPatchLevel | int | A number indicating the minimum patch that must be installed in order to install the module. |
 | filesToDelete | [String] | A list of file names that will be removed from the installation.  File names are relative to the Attivio installation directory.  All 'removed' files are actually backed up to the module so that they may be restored if the module is removed. |
 | newFiles | {String,String} | A map of new files to be installed.  The key specifies a Attivio installation relative path to be linked to a module relative path that is supplied by the module.  If the key path exists it will be backed up in the module for later restoration if the module is removed. |
