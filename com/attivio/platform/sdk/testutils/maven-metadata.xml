@@ -3,10 +3,9 @@
   <groupId>com.attivio.platform.sdk</groupId>
   <artifactId>testutils</artifactId>
   <versioning>
-    <release>5.5.0</release>
     <versions>
-      <version>5.5.0</version>
+      <version>5.5.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170906175356</lastUpdated>
+    <lastUpdated>20170921153303</lastUpdated>
   </versioning>
 </metadata>
