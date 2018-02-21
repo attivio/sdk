@@ -62,6 +62,7 @@ Format:
 
 | Field | Type | Description |
 | --- | --- | --- |
+| components | [String] | A list of component classes defined by the module. |
 | connectors | {String,String} | A map of connector name to the java class which implements the connector. |
 | description | String | Description of the module |
 | executables | String | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
@@ -88,6 +89,10 @@ Example:
       "newFiles":{
         "lib/hadoop-annotations.jar":"lib/hadoop-annotations-2.6.0-cdh5.10.1.jar"
       }
+      "components":[
+        "com.attivio.Component1",
+        "com.attivio.Component2"
+      ]
     }
 
 This module will supply a new version of the hadoop-annotation jar, by creating a softlink from `ATTIVIO_HOME/lib/hadoop-annotations.jar` to `ATTIVIO_HOME/modules/cloudera-5.10.1/lib/hadoop-annotations-2.6.0-cdh5.10.1.jar`.  Files `ATTIVIO_HOME/lib/hadoop-annotations-2.7.2.jar` and `ATTIVIO_HOME/lib/hadoop-annotations-2.7.3.jar` will be moved to a backup directory for later restoration if they exist.  This module does not care about patch level, but does require that the Attivio version is 5.2.6 or later.
