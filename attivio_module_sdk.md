@@ -4,7 +4,7 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.1
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.2.6.0
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -28,7 +28,7 @@ Modules can be added to your Attivio installation (in which case the _must_ be i
 
     createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
-To add your module to your installation, the module *zip* should be installed by running `aie-exec moduleManager`.  This program can list, install, and remove add-on modules.
+To add your module to your installation, the module zip or jar should be installed by running `aie-exec moduleManager`.  This program can list, install, and remove add-on modules.
 
 ## Module resources
 
@@ -62,6 +62,7 @@ Format:
 
 | Field | Type | Description |
 | --- | --- | --- |
+| components | [String] | A list of component classes defined by the module. |
 | connectors | {String,String} | A map of connector name to the java class which implements the connector. |
 | description | String | Description of the module |
 | executables | String | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
@@ -88,11 +89,14 @@ Example:
       "newFiles":{
         "lib/hadoop-annotations.jar":"lib/hadoop-annotations-2.6.0-cdh5.10.1.jar"
       }
+      "components":[
+        "com.attivio.Component1",
+        "com.attivio.Component2"
+      ]
     }
 
 This module will supply a new version of the hadoop-annotation jar, by creating a softlink from `ATTIVIO_HOME/lib/hadoop-annotations.jar` to `ATTIVIO_HOME/modules/cloudera-5.10.1/lib/hadoop-annotations-2.6.0-cdh5.10.1.jar`.  Files `ATTIVIO_HOME/lib/hadoop-annotations-2.7.2.jar` and `ATTIVIO_HOME/lib/hadoop-annotations-2.7.3.jar` will be moved to a backup directory for later restoration if they exist.  This module does not care about patch level, but does require that the Attivio version is 5.2.6 or later.
 
 ## Adding your module to source control
 
-Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.
-1.
+Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.  Attivio modules are located [here](https://git.attivio.com/attivio-modules).
