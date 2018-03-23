@@ -99,4 +99,5 @@ This module will supply a new version of the hadoop-annotation jar, by creating 
 
 ## Adding your module to source control
 
-Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.  Attivio modules are located [here](https://git.attivio.com/attivio-modules).
+Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.
+1.
