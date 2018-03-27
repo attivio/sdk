@@ -7,7 +7,7 @@ code that connects to an existing Attivio system and ingests data, runs queries,
 
 ## Create a sample Attivio SDK project
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.1
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.1.0
 
 [Attivio Module SDK](attivio_module_sdk.md)
 
@@ -15,6 +15,7 @@ code that connects to an existing Attivio system and ingests data, runs queries,
 
 [Writing and Testing Custom Components](writing_and_testing_components.md)  
 [Using the ServiceFactory](service_factory.md)
+[Creating a Custom Executable](creating_a_custom_executable.md)
 
 ***
 [License Agreement](license.md)

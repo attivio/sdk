@@ -12,7 +12,6 @@ This interactive command asks for a few parameters to drive the creation of the 
 | --- | --- |
 | groupId | The maven groupId for the new module.  For example `com.attivio.platform` |
 | artifactId | The maven artifactId for the new module.  This should be thought of as the module name.  The generated project will be in a directory with this name |
-| includeWeb | Whether or not include examples that include a Attivio Admin UI insert.  These examples use unsupported API and require Attivio to be installed. |
 
 ## Building the module
 

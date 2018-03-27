@@ -5,32 +5,32 @@
   <version>5.5.1.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20180327.141818</timestamp>
-      <buildNumber>3</buildNumber>
+      <timestamp>20180327.183143</timestamp>
+      <buildNumber>4</buildNumber>
     </snapshot>
-    <lastUpdated>20180327141818</lastUpdated>
+    <lastUpdated>20180327183143</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>5.5.1.0-20180327.141818-3</value>
-        <updated>20180327141818</updated>
+        <value>5.5.1.0-20180327.183143-4</value>
+        <updated>20180327183143</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>5.5.1.0-20180327.141818-3</value>
-        <updated>20180327141818</updated>
+        <value>5.5.1.0-20180327.183143-4</value>
+        <updated>20180327183143</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>5.5.1.0-20180327.141818-3</value>
-        <updated>20180327141818</updated>
+        <value>5.5.1.0-20180327.183143-4</value>
+        <updated>20180327183143</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>test-sources</classifier>
         <extension>jar</extension>
-        <value>5.5.1.0-20180327.141818-3</value>
-        <updated>20180327141818</updated>
+        <value>5.5.1.0-20180327.183143-4</value>
+        <updated>20180327183143</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
