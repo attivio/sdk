@@ -24,7 +24,7 @@ This will create a new jar in the target directory of your module.
 
 ## Using your new module
 
-Modules can be added to your Attivio installation (in which case the _must_ be installed on every Attivio host) or added to projects which wish to use them.  To create a project with your new module without installing it, supply the jar to the createproject command as if it were a module name:
+Modules can be added to your Attivio installation (in which case they _must_ be installed on every Attivio host) or added to projects which wish to use them.  To create a project with your new module without installing it, supply the jar to the createproject command as if it were a module name:
 
     createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
