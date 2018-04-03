@@ -27,7 +27,6 @@ ContentStoreProvider storeProvider = serviceFactory.getService(ContentStoreProvi
 * SchemaApi
 * AuditWriterApi
 * AuditReaderApi
-* ContentStoreClient
 * DocumentStoreApi
 * ConnectorHistoryApi
 * ContentStoreProvider
