@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.attivio</groupId>
+    <artifactId>platform</artifactId>
+    <version>5.5.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.attivio.platform</groupId>
+  <artifactId>sdk</artifactId>
+  <version>5.5.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>platform/sdk</name>
+  <modules>
+    <module>api</module>
+    <module>runtime</module>
+    <module>testutils</module>
+  </modules>
+  <properties>
+    <baseName>sdk-${project.artifactId}</baseName>
+    <version.attivio.platform>5.5.1-SNAPSHOT</version.attivio.platform>
+    <version.attivio.release>5.5.1</version.attivio.release>
+
+    <sdk.repo.staging.dir>${project.basedir}/../target/mvn-repo</sdk.repo.staging.dir>
+  </properties>
+  <profiles>
+    <profile>
+      <id>sdkdeploy</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.5</version>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-scm-publish-plugin</artifactId>
+            <version>1.1</version>
+            <executions>
+              <!--<execution>  Skipping until javadoc builds work again
+                <id>sdk javadoc</id>
+                <goals>
+                  <goal>publish-scm</goal>
+                </goals>
+                <phase>deploy</phase>
+                <configuration>
+                  <pubScmUrl>scm:git:git@github.com:attivio/sdk-5.5-javadoc.git</pubScmUrl>
+                  <content>${project.basedir}/api/target/javadocs/sdk-api</content>
+                  <checkinComment>PLAT-0, javadoc for sdk</checkinComment>
+                  <checkoutDirectory>target/scmpublish-javadoc</checkoutDirectory>
+                </configuration>
+              </execution>-->
+              <execution>
+                <id>sdk artifacts</id>
+                <goals>
+                  <goal>publish-scm</goal>
+                </goals>
+                <phase>deploy</phase>
+                <configuration>
+                  <pubScmUrl>scm:git:git@github.com:attivio/sdk.git</pubScmUrl>
+                  <scmBranch>develop</scmBranch>
+                  <checkoutDirectory>target/scmpublish-artifacts</checkoutDirectory>
+                  <content>${sdk.repo.staging.dir}</content>
+                  <checkinComment>PLAT-0, artifacts for sdk</checkinComment>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>sdkinstall</id>
+        <!-- plugins that actually need to execute a goal -->
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-scm-plugin</artifactId>
+            <version>1.9.5</version>
+            <inherited>false</inherited>
+            <executions>
+              <execution>
+                <id>copy current SDK artifacts</id>
+                <phase>generate-resources</phase>
+                <goals>
+                  <goal>checkout</goal>
+                </goals>
+                <configuration>
+                  <connectionUrl>scm:git:git@github.com:attivio/sdk.git</connectionUrl>
+                  <scmVersion>develop</scmVersion>
+                  <scmVersionType>branch</scmVersionType>
+                  <checkoutDirectory>${sdk.repo.staging.dir}</checkoutDirectory>
+                  <includes>com/attivio/**</includes>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <!-- Copy the .md files for the SDK repo (the documentation on how to use it) -->
+            <artifactId>maven-resources-plugin</artifactId>
+            <inherited>false</inherited>
+            <executions>
+              <execution>
+                <id>copy public SDK documentation</id>
+                <phase>generate-resources</phase>
+                <goals>
+                  <goal>copy-resources</goal>
+                </goals>
+                <configuration>
+                  <outputDirectory>${sdk.repo.staging.dir}</outputDirectory>
+                  <resources>
+                    <resource>
+                      <directory>${project.basedir}/src/main/resources</directory>
+                    </resource>
+                  </resources>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <build>
+    <finalName>aie-${baseName}</finalName>
+    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+    <resources>
+      <resource>
+        <filtering>true</filtering>
+        <directory>${project.basedir}/src/main/resources</directory>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>${project.basedir}/src/test/resources</directory>
+      </testResource>
+    </testResources>
+  </build>
+</project>

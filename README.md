@@ -11,10 +11,15 @@ code that connects to an existing Attivio system and ingests data, runs queries,
 
 [Attivio Module SDK](attivio_module_sdk.md)
 
+## Attivio Service Factory
+
+[Using the ServiceFactory](service_factory.md)  
+[Testing with the ServiceFactory](testing_service_factory.md)  
+[Creating a Custom Service](creating_a_custom_service.md)  
+
 ## Other guides
 
 [Writing and Testing Custom Components](writing_and_testing_components.md)  
-[Using the ServiceFactory](service_factory.md)  
 [Creating a Custom Executable](creating_a_custom_executable.md)
 
 ***

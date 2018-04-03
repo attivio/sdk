@@ -64,7 +64,7 @@ Format:
 | components | [String] | A list of component classes defined by the module. |
 | connectors | {String,String} | A map of connector name to the java class which implements the connector. |
 | description | String | Description of the module |
-| executables | String | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
+| executables | {String,String} | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
 | filesToDelete | [String] | A list of file names that will be removed from the installation.  File names are relative to the Attivio installation directory.  All 'removed' files are actually backed up to the module so that they may be restored if the module is removed. |
 | licensed | boolean | Whether or not use of this module requires an additional license. |
 | minimumPatchLevel | int | A number indicating the minimum patch that must be installed in order to install the module. |

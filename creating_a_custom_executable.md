@@ -24,7 +24,7 @@ public class MyAttivioRunnable implements AttivioRunnable {
 ```
 
 ## Registering the Custom Executable the Module
-Any executable classes created in the manner above should be registered in the module through use of the attivio.module.json file.  [The attivio module sdk documentation](attivio_module_sdk.md) has more information on this
+Any executable classes created in the manner above should be registered in the 'executables' field in the attivio.module.json file.  [The attivio module sdk documentation](attivio_module_sdk.md) has more information on this
 
 ## Calling an AttivioRunnable
 If everything is configured properly as described above, the custom executable should show up in the list of executables available from aie-exec:

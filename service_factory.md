@@ -31,7 +31,4 @@ ContentStoreProvider storeProvider = serviceFactory.getService(ContentStoreProvi
 * DocumentStoreApi
 * ConnectorHistoryApi
 * ContentStoreProvider
-## Testing
-Implementations of services will differ whether running in a unit test or in an Attivio installations.  Mock implementations of all services listed above are provided as part of the testutils jar in the sdk.
-
-Process type (test vs. install) is determined by the presence of the attivio.test.json file that is in the src/test/resources folder in the archetype.
+* AutoCompleteApi
