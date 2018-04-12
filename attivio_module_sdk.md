@@ -4,7 +4,7 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.2.6.0
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.4
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -23,7 +23,7 @@ This will create a new jar in the target directory of your module.
 
 ## Using your new module
 
-Modules can be added to your Attivio installation (in which case the _must_ be installed on every Attivio host) or added to projects which wish to use them.  To create a project with your new module without installing it, supply the jar to the createproject command as if it were a module name:
+Modules can be added to your Attivio installation (in which case they _must_ be installed on every Attivio host) or added to projects which wish to use them.  To create a project with your new module without installing it, supply the jar to the createproject command as if it were a module name:
 
     createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
@@ -36,17 +36,10 @@ src/main/resources $ tree
 .
 ├── attivio.module.json
 ├── module-name
-│   ├── beans.xml
-│   ├── features.xml
-│   ├── module.xml
-│   └── module-name.properties
-└── webapps
-    └── module-name
-        └── WEB-INF
-            ├── classes
-            │   └── templates
-            │       └── module-name.vm
-            └── web.xml
+    ├── beans.xml
+    ├── features.xml
+    ├── module.xml
+    └── module-name.properties
 ```
 
 ### The attivio.module.json file
@@ -63,6 +56,7 @@ Format:
 | --- | --- | --- |
 | components | [String] | A list of component classes defined by the module. |
 | connectors | {String,String} | A map of connector name to the java class which implements the connector. |
+| dependencies | [String] | A list of modules upon which this module depends. Any module listed will be added to the project by the `createproject` tool automatically. |
 | description | String | Description of the module |
 | executables | {String,String} | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
 | filesToDelete | [String] | A list of file names that will be removed from the installation.  File names are relative to the Attivio installation directory.  All 'removed' files are actually backed up to the module so that they may be restored if the module is removed. |
