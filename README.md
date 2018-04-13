@@ -5,18 +5,22 @@ code that connects to an existing Attivio system and ingests data, runs queries,
 
 [Public site for SDK javadoc](https://attivio.github.io/sdk-5.5-javadoc/index.html)
 
-## Create a sample Attivio module
+## Create a sample Attivio SDK project
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.4
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.1.0
 
 [Attivio Module SDK](attivio_module_sdk.md)
 
-## Create a sample Attivio client project
+## Attivio Service Factory
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-client -DarchetypeVersion=5.5.0.4
-
-[Attivio Client SDK](attivio_client_sdk.md)
+[Using the ServiceFactory](service_factory.md)  
+[Testing with the ServiceFactory](testing_service_factory.md)  
+[Creating a Custom Service](creating_a_custom_service.md)  
 
 ## Other guides
 
-[Writing and Testing Custom Components](writing_and_testing_components.md)
+[Writing and Testing Custom Components](writing_and_testing_components.md)  
+[Creating a Custom Executable](creating_a_custom_executable.md)
+
+***
+[License Agreement](license.md)

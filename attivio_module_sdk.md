@@ -4,7 +4,7 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.2.6.0
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.4
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -12,7 +12,6 @@ This interactive command asks for a few parameters to drive the creation of the 
 | --- | --- |
 | groupId | The maven groupId for the new module.  For example `com.attivio.platform` |
 | artifactId | The maven artifactId for the new module.  This should be thought of as the module name.  The generated project will be in a directory with this name |
-| includeWeb | Whether or not include examples that include a Attivio Admin UI insert.  These examples use unsupported API and require Attivio to be installed. |
 
 ## Building the module
 
@@ -37,17 +36,10 @@ src/main/resources $ tree
 .
 ├── attivio.module.json
 ├── module-name
-│   ├── beans.xml
-│   ├── features.xml
-│   ├── module.xml
-│   └── module-name.properties
-└── webapps
-    └── module-name
-        └── WEB-INF
-            ├── classes
-            │   └── templates
-            │       └── module-name.vm
-            └── web.xml
+    ├── beans.xml
+    ├── features.xml
+    ├── module.xml
+    └── module-name.properties
 ```
 
 ### The attivio.module.json file
@@ -64,8 +56,9 @@ Format:
 | --- | --- | --- |
 | components | [String] | A list of component classes defined by the module. |
 | connectors | {String,String} | A map of connector name to the java class which implements the connector. |
+| dependencies | [String] | A list of modules upon which this module depends. Any module listed will be added to the project by the `createproject` tool automatically. |
 | description | String | Description of the module |
-| executables | String | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
+| executables | {String,String} | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
 | filesToDelete | [String] | A list of file names that will be removed from the installation.  File names are relative to the Attivio installation directory.  All 'removed' files are actually backed up to the module so that they may be restored if the module is removed. |
 | licensed | boolean | Whether or not use of this module requires an additional license. |
 | minimumPatchLevel | int | A number indicating the minimum patch that must be installed in order to install the module. |
