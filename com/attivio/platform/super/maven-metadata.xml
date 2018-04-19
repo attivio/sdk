@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>com.attivio</groupId>
-  <artifactId>platform</artifactId>
+  <groupId>com.attivio.platform</groupId>
+  <artifactId>super</artifactId>
   <versioning>
     <release>5.5.1</release>
     <versions>
-      <version>5.5.0</version>
       <version>5.5.1</version>
     </versions>
-    <lastUpdated>20180419030119</lastUpdated>
+    <lastUpdated>20180419030023</lastUpdated>
   </versioning>
 </metadata>
