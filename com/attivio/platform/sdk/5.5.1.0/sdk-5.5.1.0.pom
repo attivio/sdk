@@ -13,7 +13,7 @@
   <name>platform/sdk</name>
   <properties>
     <baseName>sdk-${project.artifactId}</baseName>
-    <version.attivio.platform>5.5.1-SNAPSHOT</version.attivio.platform>
+    <version.attivio.platform>5.5.1</version.attivio.platform>
     <version.attivio.release>5.5.1</version.attivio.release>
     <sdk.repo.staging.dir>${project.basedir}/../target/mvn-repo</sdk.repo.staging.dir>
     <!-- Javadoc configuration -->
@@ -23,7 +23,7 @@
     <profile>
       <id>_fullsdk</id>
       <activation>
-        <activeByDefault>true</activeByDefault>
+	<activeByDefault>true</activeByDefault>
       </activation>
       <modules>
         <module>api</module>
@@ -32,11 +32,33 @@
       </modules>
     </profile>
     <profile>
-      <id>sdkdeploy</id>
+      <id>publicjavadocs</id>
       <modules>
         <module>api</module>
         <module>testutils</module>
       </modules>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <jarOutputDirectory>${sdk.repo.staging.dir}</jarOutputDirectory>
+            </configuration>
+            <executions>
+              <execution>
+                <id>generate-javadoc</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>aggregate-jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>sdkdeploy</id>
       <build>
         <plugins>
           <plugin>
@@ -81,28 +103,12 @@
               </execution>
             </executions>
           </plugin>
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>generate-javadoc</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>aggregate</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
         </plugins>
       </build>
     </profile>
     <profile>
       <id>sdkinstall</id>
       <!-- plugins that actually need to execute a goal -->
-      <modules>
-        <module>api</module>
-        <module>testutils</module>
-      </modules>
       <build>
         <plugins>
           <plugin>
