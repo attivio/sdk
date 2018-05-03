@@ -4,7 +4,7 @@ The Attivio Service Factory allows SDK users to access a set of Attivio services
 The Service Factory can be accessed in a variety of ways using a ServiceFactoryFactory.  Below are some examples of how to gain access to the ContentStoreProvider
 ###### When running in an Attivio component:
 ``` 
-ServiceFactory serviceFactory = ServiceFactoryFactory.get(https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client);
+ServiceFactory serviceFactory = ServiceFactoryFactory.get();
 serviceFactory.getService(ContentStoreProvider.class)
 ContentStoreProvider storeProvider = serviceFactory.getService(ContentStoreProvider.class)
 ```
