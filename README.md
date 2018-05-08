@@ -3,11 +3,11 @@ To get started using the SDK, use Maven (`mvn`) to generate a sample client proj
 code (most commonly ingestion or query transformers) to be added to your Attivio projects.  An Attivio client project contains
 code that connects to an existing Attivio system and ingests data, runs queries, or uses other public APIs.
 
-[Public site for SDK javadoc](https://attivio.github.io/sdk-5.5-javadoc/index.html)
+[Public site for SDK javadoc](https://attivio.github.io/unpublished/index.html)
 
 ## Create a sample Attivio SDK project
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.1.0
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.1.1
 
 [Attivio Module SDK](attivio_module_sdk.md)
 
