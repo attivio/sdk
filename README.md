@@ -20,7 +20,10 @@ code that connects to an existing Attivio system and ingests data, runs queries,
 ## Other guides
 
 [Writing and Testing Custom Components](writing_and_testing_components.md)  
-[Creating a Custom Executable](creating_a_custom_executable.md)
+[Creating a Custom Executable](creating_a_custom_executable.md)  
+[Writing and Testing Data Source Scanners](writing_and_testing_scanners.md)  
+
+
 
 ***
 [License Agreement](license.md)
