@@ -50,6 +50,25 @@ to create Attivio users and groups from other sources. The sample demonstrates t
 - Using AttivioGroupMembership to add members to groups.
 - Using the DocumentPublisher.feed method to create principals in the Attivio index.
 
+## The Http Data Source Examples
+
+The sample Attivio project contain the `com.sample.module.SampleHttpDataSourceScanner` and the `com.sample.module.SampleCustomHttpDataSourceScanner` examples. The
+first example demonstrates the use of the `HttpDataSourceScanner` interface to take advantage of the Attivio provided implementation of Http authentication protocols. The second 
+example demonstrates how Http can be customized when the Attivio provided implementation is not sufficient. Observe the following in SampleHttpDataSourceScanner:
+- The scanner uses the `httpProvider` object provided by Attivio to retrieve data over Http.
+- The scanner doesn't need to authenticate because that is done by the Attivio framework.
+- The scanner implements the `BasicAuthentication` interface because the expectation is that the target data sources are protected by the Basic Http authentication protocol.
+- You can modify the scanner in this example to implement other SDK <protocol>Authentication interfaces from the `com.attivio.sdk.scanner.http` package to support additional protocols.
+- httpProvider is closed before exiting the start(...) method.
+
+Observe the following in `SampleCustomHttpDataSourceScanner`:
+- It is very similar to `SampleHttpDataSourceScanner` with one diffrence: It overrides the default `getHttpClientProviderFactory`.
+- The custom factory creates the  `SampleHttpClientProvider` provider whenever the scanner is configured with the www.google.com url.
+- For any other url, the Attivio provided factory is used.
+- The `SampleHttpClientProvider` implementation is very simple, it just demonstrates how the Http client TTL is customized. It is expected that for real implementations, 
+  customization will be typically used to support authentication protocols Attivio doesn't yet support.
+
+
 
 ## Glossary
 
@@ -62,5 +81,10 @@ This is a gloassary of the main interfaces and classes relevant to scanner imple
  - **com.attivio.sdk.client.IngestionHistoryApi:** Service that allow the scanner to persist and retrieve the scanner state across runs.  
  - **com.attivio.sdk.scanner.IncrementalDataSourceScanner:** The scanner should implement this interface when incremental scan is required.  
  - **com.attivio.sdk.security.*:** Model classes to create principals and ACLs in order to control who is allowed to read Attivio documents.  
- - **com.attivio.sdk.server.annotation.*:** Use annotations define the administration UI for scanners and other Attivio components.  
+ - **com.attivio.sdk.server.annotation.*:** Use annotations define the administration UI for scanners and other Attivio components. 
+ - **com.attivio.sdk.scanner.http.HttpDataSourceScanner:** The scanner will implement this interface to use the Attivio provided Http client.  
+ - **com.attivio.sdk.scanner.http.HttpClientProvider:**  Attivio will provide an implementation of this interface to the scanner and the scanner will use it to obtain the Http client.  
+ - **com.attivio.sdk.scanner.http.HttpClientProviderFactory:** The scanner will implement this interface if custom Http clients are required (could be used together with the factory provided by Attivio).  
+ - **com.attivio.sdk.scanner.http.<protocol>Authentication:** The scanner will implement one or several of these interfaces for those authentication protocols it should support.  
+ - **com.attivio.sdk.scanner.http.HttpProxy:** The scanner will implement this interface if Http proxy configuration is required.
 
