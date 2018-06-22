@@ -1,7 +1,5 @@
 # Attivio SDK
-To get started using the SDK, use Maven (`mvn`) to generate a sample client project or module.  Attivio modules allow custom
-code (most commonly ingestion or query transformers) to be added to your Attivio projects.  An Attivio client project contains
-code that connects to an existing Attivio system and ingests data, runs queries, or uses other public APIs.
+To get started using the SDK, use Maven (`mvn`) to generate a sample module. Attivio modules allow custom code (most commonly ingestion or query transformers) to be added to your Attivio projects, and enable creation of client code that connects to an existing Attivio system and ingests data, runs queries, or uses other public APIs.
 
 [Public site for SDK javadoc](https://attivio.github.io/sdk-5.5-javadoc/index.html)
 
