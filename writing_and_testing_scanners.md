@@ -59,7 +59,8 @@ example demonstrates how Http can be customized when the Attivio provided implem
 - The scanner doesn't need to authenticate because that is done by the Attivio framework.
 - The scanner implements the `BasicAuthentication` interface because the expectation is that the target data sources are protected by the Basic Http authentication protocol.
 - You can modify the scanner in this example to implement other SDK <protocol>Authentication interfaces from the `com.attivio.sdk.scanner.http` package to support additional protocols.
-- httpProvider is closed before exiting the start(...) method.
+- httpProvider is closed before exiting the start(...) method.  
+- The scanner implements the `HttpConnectionConfig` interface to allow custom configuration of http client connections.
 
 Observe the following in `SampleCustomHttpDataSourceScanner`:
 - It is very similar to `SampleHttpDataSourceScanner` with one diffrence: It overrides the default `getHttpClientProviderFactory`.
