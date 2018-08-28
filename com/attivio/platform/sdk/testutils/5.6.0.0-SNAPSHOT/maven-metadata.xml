@@ -5,32 +5,38 @@
   <version>5.6.0.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20180606.234254</timestamp>
-      <buildNumber>4</buildNumber>
+      <timestamp>20180828.163459</timestamp>
+      <buildNumber>5</buildNumber>
     </snapshot>
-    <lastUpdated>20180606234254</lastUpdated>
+    <lastUpdated>20180828163459</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>5.6.0.0-20180606.234254-4</value>
-        <updated>20180606234254</updated>
+        <value>5.6.0.0-20180828.163459-5</value>
+        <updated>20180828163459</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>5.6.0.0-20180606.234254-4</value>
-        <updated>20180606234254</updated>
+        <value>5.6.0.0-20180828.163459-5</value>
+        <updated>20180828163459</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>5.6.0.0-20180606.234254-4</value>
-        <updated>20180606234254</updated>
+        <value>5.6.0.0-20180828.163459-5</value>
+        <updated>20180828163459</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>test-sources</classifier>
         <extension>jar</extension>
-        <value>5.6.0.0-20180606.234254-4</value>
-        <updated>20180606234254</updated>
+        <value>5.6.0.0-20180828.163459-5</value>
+        <updated>20180828163459</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>tests</classifier>
+        <extension>jar</extension>
+        <value>5.6.0.0-20180828.163459-5</value>
+        <updated>20180828163459</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
