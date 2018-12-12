@@ -40,7 +40,6 @@ src/main/resources $ tree
     ├── features.xml
     ├── module.xml
     └── module-name.properties
-
 ```
 
 ### The attivio.module.json file
@@ -57,6 +56,7 @@ Format:
 | --- | --- | --- |
 | components | [String] | A list of component classes defined by the module. |
 | connectors | {String,String} | A map of connector name to the java class which implements the connector. |
+| dependencies | [String] | A list of modules upon which this module depends. Any module listed will be added to the project by the `createproject` tool automatically. |
 | description | String | Description of the module |
 | executables | {String,String} | A map of executable name to a java class extending `AttivioRunnable`.  The name will then be accessible when using `aie-exec`. |
 | filesToDelete | [String] | A list of file names that will be removed from the installation.  File names are relative to the Attivio installation directory.  All 'removed' files are actually backed up to the module so that they may be restored if the module is removed. |
@@ -92,4 +92,5 @@ This module will supply a new version of the hadoop-annotation jar, by creating 
 
 ## Adding your module to source control
 
-Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.  Attivio modules are located [here](https://git.attivio.com/attivio-modules).
+Any module worth writing should be added to source control!  Use github's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a github repository.
+1.

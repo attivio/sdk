@@ -3,7 +3,7 @@ To get started using the SDK, use Maven (`mvn`) to generate a sample client proj
 code (most commonly ingestion or query transformers) to be added to your Attivio projects.  An Attivio client project contains
 code that connects to an existing Attivio system and ingests data, runs queries, or uses other public APIs.
 
-[Public site for SDK javadoc](https://attivio.github.io/unpublished/index.html)
+[Public site for SDK javadoc](https://attivio.github.io/sdk-5.5-javadoc/index.html)
 
 ## Create a sample Attivio SDK project
 
@@ -20,10 +20,7 @@ code that connects to an existing Attivio system and ingests data, runs queries,
 ## Other guides
 
 [Writing and Testing Custom Components](writing_and_testing_components.md)  
-[Creating a Custom Executable](creating_a_custom_executable.md)  
-[Writing and Testing Data Source Scanners](writing_and_testing_scanners.md)  
-
-
+[Creating a Custom Executable](creating_a_custom_executable.md)
 
 ***
 [License Agreement](license.md)
