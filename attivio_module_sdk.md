@@ -4,7 +4,12 @@
 
 A new module can be generated using the maven archetype command.  Generated modules follow maven conventions for code and resource file locations.
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.2.6.3
+```
+mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=<archetype-version>
+```
+
+The value of `<archetype-version>` will depend on the version of Attivio SDK the new module will be built against.
+See the [README](https://github.com/attivio/sdk/blob/4.4/README.md#create-a-sample-attivio-module) for details.
 
 This interactive command asks for a few parameters to drive the creation of the module:
 
@@ -12,6 +17,7 @@ This interactive command asks for a few parameters to drive the creation of the 
 | --- | --- |
 | groupId | The maven groupId for the new module.  For example `com.attivio.platform` |
 | artifactId | The maven artifactId for the new module.  This should be thought of as the module name.  The generated project will be in a directory with this name |
+| version | The version for the new module. It should follow the standard Maven versioning format. If no version is specified, the default of `0.1.0-SNAPSHOT` will be used.
 | includeWeb | Whether or not include examples that include a Attivio Admin UI insert.  These examples use unsupported API and require Attivio to be installed. |
 
 ## Building the module
