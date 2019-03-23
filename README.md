@@ -7,16 +7,16 @@ code that connects to an existing Attivio system and ingests data, runs queries,
 
 ## Create a sample Attivio module
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=4.4.0.1
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=4.4.2.0
 
-[Attivio Module SDK](attivio_module_sdk.md)
+[Attivio Module SDK](https://github.com/attivio/sdk/blob/4.4/attivio_module_sdk.md)
 
 ## Create a sample Attivio client project
 
-    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-client -DarchetypeVersion=4.4.0.1
+    mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-client -DarchetypeVersion=4.4.2.0
 
-[Attivio Client SDK](attivio_client_sdk.md)
+[Attivio Client SDK](https://github.com/attivio/sdk/blob/4.4/attivio_client_sdk.md)
 
 ## Other guides
 
-[Writing and Testing Custom Components](writing_and_testing_components.md)
+[Writing and Testing Custom Components](https://github.com/attivio/sdk/blob/4.4/writing_and_testing_components.md)
