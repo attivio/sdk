@@ -1,6 +1,6 @@
 # Writing and Testing Components
 
-Attivio makes it easy to create custom components or stages for document, query, and response (to queries) processing.  The [README](README.md) page provides instructions for using maven archetypes to generate examples.  This guide describes the interfaces and general processing architecture for Attivio components.  Components are small chunks of Java code which are executed by the Attivio framework as documents and queries pass through the system.  A good component should be focused on a small task (such as capitalizing text), keep little to no state, and be designed to be independent of other components in the system.  These principles make components reusable in other contexts and composable.
+Attivio makes it easy to create custom components or stages for document, query, and response (to queries) processing.  The [README](https://github.com/attivio/sdk/blob/5.5/README.md) page provides instructions for using maven archetypes to generate examples.  This guide describes the interfaces and general processing architecture for Attivio components.  Components are small chunks of Java code which are executed by the Attivio framework as documents and queries pass through the system.  A good component should be focused on a small task (such as capitalizing text), keep little to no state, and be designed to be independent of other components in the system.  These principles make components reusable in other contexts and composable.
 
 Your component may be created many times (multiple instances) within the same Java process.  This is used for parallelization purposes and to allow dynamic changes to take place.  For this reason, static data, expensive startup/shutdown code, and heavy memory use should be avoided within your components.  Components whose instances need to share data should consider using the `ThreadSafe` annotation (see below).
 
@@ -71,7 +71,7 @@ Once you have chosen a component type, you can also add a number of mix-in inter
 
 ## Testing your component
 
-It is important to write focused and concise unit tests for your custom components.  Attivio provides a number of testing utilities and mock implementations to make writing good unit tests simple.  This archetype generation referenced by the [README](README.md) page provides examples of the techniques described here.
+It is important to write focused and concise unit tests for your custom components.  Attivio provides a number of testing utilities and mock implementations to make writing good unit tests simple.  This archetype generation referenced by the [README](https://github.com/attivio/sdk/blob/5.5/README.md) page provides examples of the techniques described here.
 
 ##### Create the component
 

@@ -6,7 +6,7 @@ Any functionality that makes use of the ServiceFactory whether in Attivio SDK or
 
 In the Attivio SDK, whether or not a process is running as a test is determined by the inclusion of the testutils jar on the classpath.  This jar is not part of the install, but is included by default in the Attivio SDK archetype as a test dependency. Specifically, Attivio checks for the presence of the attivio.test.json file on the classpath.  This is included (and empty) in the testutils jar, but will be overwritten by the version of that file in the archetype.
 
-At runtime Attivio will find an implementation of the service from a bean, whereas in a test Attivio will find an implementation (beyond what is default) from the attivio.test.json file using the testAssociations field.  To learn more about how this works in the context of a custom service, see [Creating a Custom Service](creating_a_custom_service.md).
+At runtime Attivio will find an implementation of the service from a bean, whereas in a test Attivio will find an implementation (beyond what is default) from the attivio.test.json file using the testAssociations field.  To learn more about how this works in the context of a custom service, see [Creating a Custom Service](https://github.com/attivio/sdk/blob/5.5/creating_a_custom_service.md).
 
 ### Mock Services
 
