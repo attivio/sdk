@@ -11,7 +11,7 @@ code that connects to an existing Attivio system and ingests data, runs queries,
 | --- |
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.6.1.0-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.6.1.0-SNAPSHOT -Parchetype-dev
 ```
 
 [Attivio Module SDK](attivio_module_sdk.md)
