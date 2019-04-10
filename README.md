@@ -18,14 +18,16 @@ mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -Darch
 
 ## Attivio Service Factory
 
-[Using the ServiceFactory](service_factory.md)
-[Testing with the ServiceFactory](testing_service_factory.md)
-[Creating a Custom Service](creating_a_custom_service.md)
+* [Using the ServiceFactory](service_factory.md)
+* [Testing with the ServiceFactory](testing_service_factory.md)
+* [Creating a Custom Service](creating_a_custom_service.md)
 
 ## Other guides
 
-[Writing and Testing Custom Components](writing_and_testing_components.md)
-[Creating a Custom Executable](creating_a_custom_executable.md)
+* [Writing and Testing Custom Components](writing_and_testing_components.md)
+* [Creating a Custom Executable](creating_a_custom_executable.md)
+* [Writing and Testing Data Source Scanners](writing_and_testing_scanners.md)
 
 ***
+
 [License Agreement](license.md)
