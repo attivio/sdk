@@ -1,9 +1,3 @@
----
-description: >-
-  The Attivio Service Factory allows SDK users to access a set of Attivio
-  services, or create custom services, that run on a node process.
----
-
 # Service Factory
 
 ### Usage
