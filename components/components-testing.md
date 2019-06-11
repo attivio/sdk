@@ -1,6 +1,8 @@
 # Testing Components
 
-It is important to write focused and concise unit tests for your custom components. Attivio provides a number of testing utilities and mock implementations to make writing good unit tests simple. This archetype generation referenced by the README page provides examples of the techniques described here.
+It is important to write focused and concise unit tests for your custom components. Attivio provides a number of testing utilities and mock implementations to make writing good unit tests simple. 
+
+The archetype generation referenced on the [Module SDK](../module-sdk.md#module-generation) page provides examples of the techniques described here.
 
 ### Create the component
 

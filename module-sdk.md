@@ -1,9 +1,3 @@
----
-description: >-
-  Attivio modules allow custom code (for example ingestion or query
-  transformers) to be added to your Attivio projects.
----
-
 # Module SDK
 
 ### Module generation
@@ -14,8 +8,7 @@ A new module can be generated using the maven archetype command. Generated modul
 mvn archetype:generate \
   -DarchetypeGroupId=com.attivio.platform.archetypes \ 
   -DarchetypeArtifactId=attivio-archetype-module \
-  -DarchetypeVersion=5.6.1.0 \
-  -Parchetype-dev
+  -DarchetypeVersion=5.6.1.0
 ```
 
 This interactive command asks for a few parameters to drive the creation of the module:

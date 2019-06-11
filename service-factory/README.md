@@ -1,9 +1,3 @@
----
-description: >-
-  The Attivio Service Factory allows SDK users to access a set of Attivio
-  services, or create custom services, that run on a node process.
----
-
 # Service Factory
 
 ### Usage
@@ -30,16 +24,16 @@ ContentStoreProvider storeProvider = serviceFactory.getService(ContentStoreProvi
 
 ### List of Attivio services accessible through the Service Factory
 
-* [`IngestClient`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/IngestClient.html)
-* [`EventStoreApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/EventStoreApi.html)
-* [`IngestionHistoryApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/IngestionHistoryApi.html)
-* [`SearchClient`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/SearchClient.html)
-* [`SignalTrackingApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/SignalTrackingApi.html)
-* [`RelevancyModelApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/RelevancyModelApi.html)
-* [`AuditWriterApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/audit/AuditWriterApi.html)
-* [`AuditReaderApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/audit/AuditReaderApi.html)
-* [`DocumentStoreApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/DocumentStoreApi.html)
-* [`ConnectorHistoryApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/ConnectorHistoryApi.html)
-* [`ContentStoreProvider`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/api/ContentStoreProvider.html)
-* [`AutoCompleteApi`](https://attivio.github.io/sdk-5.5-javadoc/com/attivio/sdk/client/AutoCompleteApi.html)
+* `IngestClient`
+* `EventStoreApi`
+* `IngestionHistoryApi`
+* `SearchClient`
+* `SignalTrackingApi`
+* `RelevancyModelApi`
+* `AuditWriterApi`
+* `AuditReaderApi`
+* `DocumentStoreApi`
+* `ConnectorHistoryApi`
+* `ContentStoreProvider`
+* `AutoCompleteApi`
 

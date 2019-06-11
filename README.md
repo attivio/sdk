@@ -1,12 +1,16 @@
 # Attivio Platform SDK 5.6
 
+{% hint style="warning" %}
+This version of Attivio SDK **has not yet been released**. 
+{% endhint %}
+
 ### Attivio Modules
 
 Attivio modules allow custom code \(for example ingestion or query transformers\) to be added to your Attivio projects.
 
 {% page-ref page="module-sdk.md" %}
 
-[Public site for SDK javadoc](https://attivio.github.io/sdk-5.5-javadoc/index.html)
+Public site for SDK javadoc
 
 ### Attivio Service Factory
 
