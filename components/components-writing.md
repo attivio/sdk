@@ -1,6 +1,6 @@
 # Writing Components
 
-### Component Types
+## Component Types
 
 The first step in writing a custom component is to choose what type of component you need. The component types are broken down by basic function. Almost all components you write will be one of the first three \(which are document transformers\). When creating a new component, choose the most specific type that meets your needs.
 
@@ -15,11 +15,11 @@ The first step in writing a custom component is to choose what type of component
 | `BaseRoutingComponent` | An advanced component that can change the workflow that will be used for a system message. |
 | `MessageHandlingWorkflowStage` | An advanced catch-all component that operates on raw system messages, doing whatever it likes to them. |
 
-### The Mix-In Interfaces
+## The Mix-In Interfaces
 
 Once you have chosen a component type, you can also add a number of mix-in interfaces to the component. These allow you to indicate additional capabilities or requirements to the platform for your component.
 
-#### Lifecycle
+### Lifecycle
 
 | Name | Description |
 | :--- | :--- |
@@ -28,7 +28,7 @@ Once you have chosen a component type, you can also add a number of mix-in inter
 | `AfterAllLocalInstancesStarted` | Provides a hook for the component to do initialization after all instances of this component have been started \(`Startable.startComponent()` has been called\). |
 | `AfterLocalNodeStartup` | Provides a hook for the component to do initialization after all components in the system have been started. |
 
-#### Component Configuration
+### Component Configuration
 
 | Name | Description |
 | :--- | :--- |
@@ -43,7 +43,7 @@ Once you have chosen a component type, you can also add a number of mix-in inter
 | `HasSchemaNameProperty` |  |
 | `HasTokenizerProperty` |  |
 
-#### Miscellaneous
+### Miscellaneous
 
 | Name | Description |
 | :--- | :--- |
@@ -54,7 +54,7 @@ Once you have chosen a component type, you can also add a number of mix-in inter
 | `SchemaUtilAware` |  |
 | `SystemEventPublisherAware` |  |
 
-#### Annotations
+### Annotations
 
 | Name | Description |
 | :--- | :--- |
