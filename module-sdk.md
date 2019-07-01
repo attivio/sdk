@@ -1,6 +1,6 @@
 # Module SDK
 
-### Module generation
+## Module generation
 
 A new module can be generated using the maven archetype command. Generated modules follow maven conventions for code and resource file locations.
 
@@ -20,7 +20,7 @@ This interactive command asks for a few parameters to drive the creation of the 
 | `version` | The version for the new module. It should follow the standard Maven versioning format. If no version is specified, the default of `0.1.0-SNAPSHOT` will be used. |
 | `includeWeb` | Whether or not include examples that include a Attivio Admin UI insert.  These examples use unsupported API and require Attivio to be installed. |
 
-### Building the module
+## Building the module
 
 The generated module can be built without any changes. It includes working components and tests. Enter the module directory and run `mvn`:
 
@@ -30,7 +30,7 @@ mvn clean install
 
 This will create a new jar in the target directory of your module.
 
-### Using your new module
+## Using your new module
 
 Modules can be added to your Attivio installation \(in which case the _must_ be installed on every Attivio host\) or added to projects which wish to use them. To create a project with your new module without installing it, supply the jar to the `createproject` command as if it were a module name:
 
@@ -40,7 +40,7 @@ createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
 To add your module to your installation, the module _zip_ from the target directory should be installed by running `aie-exec com.attivio.app.config.modules.ModulesManager`. This program can list, install, and remove add-on modules. Use of the `moduleManager` requires 5.2.6 patch level 191 or greater.
 
-### Module resources
+## Module resources
 
 ```text
 src/main/resources $ tree
@@ -60,7 +60,7 @@ src/main/resources $ tree
             └── web.xml
 ```
 
-### The `attivio.module.json` file
+## The `attivio.module.json` file
 
 The `attivio.module.json` file is located in a module's `src/main/resources` directory. This file contains metadata about the module, including a description and declaration of the module's components, executables, and connectors. Module metadata is also used during the module installation process to add and remove files to the Attivio installation. The minimum metadata file is:
 
@@ -70,7 +70,7 @@ The `attivio.module.json` file is located in a module's `src/main/resources` dir
 }
 ```
 
-#### Format
+### Format
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
@@ -82,7 +82,7 @@ The `attivio.module.json` file is located in a module's `src/main/resources` dir
 | `filesToDelete` | \[String\] | A list of file names that will be removed from the installation.  File names are relative to the Attivio installation directory.  All 'removed' files are actually backed up to the module so that they may be restored if the module is removed. |
 | `newFiles` | {String,String} | A map of new files to be installed.  The key specifies a Attivio installation relative path to be linked to a module relative path that is supplied by the module.  If the key path exists it will be backed up in the module for later restoration if the module is removed. |
 
-#### Example
+### Example
 
 {% code-tabs %}
 {% code-tabs-item title="attivio.module.json" %}
