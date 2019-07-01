@@ -1,9 +1,5 @@
 # Attivio Platform SDK 5.6
 
-{% hint style="warning" %}
-This version of Attivio SDK **has not yet been released**. 
-{% endhint %}
-
 ### Attivio Modules
 
 Attivio modules allow custom code \(for example ingestion or query transformers\) to be added to your Attivio projects.
@@ -29,6 +25,3 @@ The Attivio Service Factory allows SDK users to access a set of Attivio services
 {% page-ref page="components/" %}
 
 {% page-ref page="scanners/" %}
-
-
-
