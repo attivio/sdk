@@ -6,7 +6,7 @@ Attivio modules allow custom code \(for example ingestion or query transformers\
 
 {% page-ref page="module-sdk.md" %}
 
-Public site for SDK javadoc
+[Public site for SDK javadoc](https://attivio.github.io/sdk-5.6-javadoc)
 
 ## Attivio Service Factory
 
