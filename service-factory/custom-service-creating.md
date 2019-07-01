@@ -56,9 +56,6 @@ To create a service that can be accessed through the `ServiceFactory`, there are
 
 3. Register the implementation as a bean in the `beans.xml` file \(located in the `src/main/resources` folder of the project\).  
 
-
-   {% code-tabs %}
-   {% code-tabs-item title="beans.xml" %}
    ```markup
    <?xml version="1.0" encoding="UTF-8"?>
    <beans xmlns="http://www.springframework.org/schema/beans" 
@@ -72,8 +69,6 @@ To create a service that can be accessed through the `ServiceFactory`, there are
        lazy-init="true" /> <!-- this is the service -->
    </beans>
    ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
 
 4. If desired, create a mock implementation of your service.  
 
