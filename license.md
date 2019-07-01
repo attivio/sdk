@@ -8,25 +8,25 @@ By clicking on the "accept" button at the end of this document or by downloading
 
 If you are an existing customer of Attivio, by clicking on the "accept" button, you confirm that you have previously signed the Attivio Master Software License and Services Agreement. If you are using the Products in your capacity as employee or agent of a company or organization, then any references to the "Company" in this agreement shall refer to such entity and not to you in your personal capacity. You warrant that you are authorized to legally bind the company. If you are not so authorized, then neither you nor the Company may use the Products in any manner whatsoever.
 
-### 1  Definitions. As used in this Evaluation License:
+## 1  Definitions. As used in this Evaluation License:
 
 \(a\) "Products" means the object code version of the Attivio Active Intelligence Engine \(AIE\) and Related Materials.
 
 \(b\) "Related Materials" means information in written or other documentary form supplied to Company by Attivio that relates, in whole or in part, to the installation, design, use, operation, testing, debugging, support, maintenance or marketing of Products.
 
-### 2  Evaluation of Products
+## 2  Evaluation of Products
 
 Subject to the terms and conditions set forth in this Evaluation License, Attivio grants to Company a non-exclusive, personal, nontransferable right to use the Products for a period of ninety \(90\) days from the date the Products are downloaded by Customer \(the "Download Date"\) solely for the purpose of internally evaluating the Products in contemplation of licensing the right to use such Products from Attivio. This Evaluation License does not grant Company rights to any improvements, modifications, enhancements or updates to the Products.
 
-### 3  Term
+## 3  Term
 
 This Evaluation License will remain in effect until the earlier of \(i\) the date Company purchases a license for the Products, or \(ii\) ninety \(90\) days from the Download Date.
 
-### 4  Ownership; Third Party Software
+## 4  Ownership; Third Party Software
 
 Ownership of the Products, copies, modifications and derivatives of the Products \(in whole or in part\) and all related patents, copyrights, trademarks, trade secrets and other proprietary rights are and will remain the sole and exclusive property of Attivio and/or its licensors. Company shall use the Products solely for evaluation purposes as expressly permitted by this Evaluation License and shall not reverse engineer, adapt, translate, decompile or disassemble them. Company shall not sell, disclose, display or otherwise make available to others the Products or Related Materials without the prior written consent of Attivio. The Products may include certain components licensed from third parties \("Third Party Components"\). Some of these Third Party Components may be subject to an open source license, which is generally included with the source code for such Third Party Component \("Third Party License"\). Company's license rights with respect to individual Third Party Components are defined by the terms of any applicable Third Party License; nothing in this Evaluation License shall restrict, limit, or otherwise affect any rights or obligations Company may have, or conditions to which Company may be subject, under such Third Party License. Further, no such third party warrants the Products, assumes any liability in connection with the Products or undertakes to furnish any support or information relating to the Products. All such third parties are intended third-party beneficiaries of this Evaluation License. The Products provided by Attivio hereunder, if provided to any agency of the U.S. Government or U.S. Government contractor or subcontractor at any tier shall be subject to the maximum restrictions on use as permitted by FAR 52.227-19 \(June 1987\) or DFARS 227.7202-3\(a\) \(Jan. 1, 2000\) or successor regulations.
 
-### 5  Confidentiality
+## 5  Confidentiality
 
 5.1 "Confidential Information" herein shall mean all information which is written, graphic, machine readable or other tangible form and is marked "confidential," "proprietary," "source code," or in some other manner to indicate its confidential nature, or which is disclosed orally and designated as "confidential" in writing within sixty \(60\) days from the date of oral disclosure, or which under the circumstances of disclosure reasonably ought to be considered as confidential. Confidential Information may include, without limitation, software programs, technical data, methodologies, know- how, processes, designs, new products, and marketing plans. Confidential Information of Attivio shall expressly include the Products and the terms of this Agreement.
 
@@ -39,7 +39,7 @@ Company will cooperate at its own expense with Attivio in seeking suitable injun
 
 5.5 If Company makes any suggestions to Attivio regarding new features, functionality or performance that Attivio adopts for its products, such new features, functionality or performance shall become the sole and exclusive property of Attivio, free from any restriction imposed upon Attivio by the provisions of this Section 5.
 
-### 6  Termination
+## 6  Termination
 
 6.1 If Company fails to comply with a material term or condition of this Evaluation License, Attivio may terminate this Evaluation License immediately upon written notice to the Company.
 
@@ -49,11 +49,11 @@ Company will cooperate at its own expense with Attivio in seeking suitable injun
 
 6.4 Sections 4, 5, 7 and 8 shall survive for five \(5\) years after termination of this Evaluation License.
 
-### 7  No Warranty; Limitation of Liability
+## 7  No Warranty; Limitation of Liability
 
 THE PRODUCTS ARE MADE AVAILABLE TO YOU "AS IS" AND ATTIVIO MAKES NO WARRANTIES OF ANY KIND WITH RESPECT TO THE PRODUCTS \(INCLUDING THIRD PARTY SOFTWARE AND PRODUCTS\), AND SPECIFICALLY DISCLAIMS AND EXCLUDES ANY AND ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, AND ANY ALL WARRANTIES ARISING FROM COURSE OF PERFORMANCE, COURSE OF DEALING OR TRADE USEAGE. IN NO EVENT SHALL ATTIVIO BE LIABLE TO THE COMPANY FOR ANY LOSS OR DAMAGE OF ANY KIND, INCLUDING BUT NOT LIMITED TO DIRECT, INCIDENTAL, INDIRECT, CONSEQUENTIAL OR SPECIAL DAMAGES, ARISING OUT OF THIS EVALUATION LICENSE OR THE DELIVERY, USE, SUPPORT OR OPERATION OF THE PRODUCTS. NO REPRESENTATION OR OTHER AFFIRMATION OF FACT, INCLUDING, BUT NOT LIMITED TO, STATEMENTS REGARDING CAPACITY, QUALITY, SUITABILITY FOR USE OR PERFORMANCE, WHETHER MADE BY ATTIVIO EMPLOYEES OR OTHERWISE, SHALL BE DEEMED A WARRANTY BY ATTIVIO FOR ANY PURPOSE OR GIVE RISE TO ANY LIABILITY OF ATTIVIO WHATSOEVER. THE REMEDIES PROVIDED TO COMPANY IN THIS EVALUATION LICENSE ARE EXCLUSIVE.
 
-### 8  General
+## 8  General
 
 8.1 Amendment. This Evaluation License may be modified, changed or amended only in writing signed by an authorized representative of each party. Only an authorized officer Attivio shall have any actual or apparent authority to modify the terms of this Evaluation License.
 

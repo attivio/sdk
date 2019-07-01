@@ -2,7 +2,7 @@
 
 Custom executable functionality can be added to an Attivio project and/or install such that, by entering a command, a user can execute custom code as part of the attivio environment but in a separate process.
 
-### Implementing `AttivioRunnable`
+## Implementing `AttivioRunnable`
 
 `AttivioRunnable` is an interface much like `java.lang.Runnable` in that it has an abstract run method. A class implementing `AttivioRunnable` and supplying a body for that run method can be run using the aie-exec executable in the `bin` directory of any Attivio installation. In order to take command line arguments to the executable, this class must have getters and setters for all fields to be obtained through the command line. The getters should be annotated with `@ConfigurationOption` so that they can be given certain properties as command line arguments such as description, whether or not they are required, and short option for specification. See a sample custom runnable below:
 
@@ -26,11 +26,11 @@ public class MyAttivioRunnable implements AttivioRunnable {
 }
 ```
 
-### Registering the Custom Executable the Module
+## Registering the Custom Executable the Module
 
 Any executable classes created in the manner above should be registered in the 'executables' field in the `attivio.module.json` file. The attivio module sdk documentation has more information on this
 
-### Calling an `AttivioRunnable`
+## Calling an `AttivioRunnable`
 
 If everything is configured properly as described above, the custom executable should show up in the list of executables available from `aie-exec`:
 

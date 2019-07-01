@@ -7,8 +7,6 @@ Components are small chunks of Java code which are executed by the Attivio frame
 Your component may be created many times \(multiple instances\) within the same Java process. This is used for parallelization purposes and to allow dynamic changes to take place. For this reason, static data, expensive startup/shutdown code, and heavy memory use should be avoided within your components.
 
 {% hint style="info" %}
-Components whose instances need to share data should consider using the [`ThreadSafe`](https://github.com/mmasi-attivio/sdk/blob/develop/components/components-writing.md#annotations) annotation. 
+Components whose instances need to share data should consider using the [`ThreadSafe`](https://github.com/mmasi-attivio/sdk/blob/develop/components/components-writing.md#annotations) annotation.
 {% endhint %}
-
-
 
