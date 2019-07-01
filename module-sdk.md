@@ -1,6 +1,6 @@
 # Module SDK
 
-### Module generation
+## Module generation
 
 A new module can be generated using the maven archetype command. Generated modules follow maven conventions for code and resource file locations.
 
@@ -18,7 +18,7 @@ This interactive command asks for a few parameters to drive the creation of the 
 | `groupId` | The maven groupId for the new module.  For example `com.attivio.platform` |
 | `artifactId` | The maven artifactId for the new module.  This should be thought of as the module name.  The generated project will be in a directory with this name |
 
-### Building the module
+## Building the module
 
 The generated module can be built without any changes. It includes working components and tests. Enter the module directory and run `mvn`:
 
@@ -28,7 +28,7 @@ mvn clean install
 
 This will create a new jar in the target directory of your module.
 
-### Using your new module
+## Using your new module
 
 Modules can be added to your Attivio installation \(in which case they _must_ be installed on every Attivio host\) or added to projects which wish to use them. To create a project with your new module without installing it, supply the jar to the createproject command as if it were a module name:
 
@@ -38,7 +38,7 @@ createproject -n project-name -m module-dir/target/module-name-1.0-SNAPSHOT.jar
 
 To add your module to your installation, the module zip or jar should be installed by running `aie-exec moduleManager`. This program can list, install, and remove add-on modules.
 
-### Module resources
+## Module resources
 
 ```text
 src/main/resources $ tree
@@ -51,9 +51,9 @@ src/main/resources $ tree
     └── module-name.properties
 ```
 
-### The `attivio.module.json` file
+## The `attivio.module.json` file
 
-The `attivio.module.json` file is located in a module's `src/main/resources` directory. This file contains metadata about the module, including a description and declaration of the module's components, executables, and connectors. 
+The `attivio.module.json` file is located in a module's `src/main/resources` directory. This file contains metadata about the module, including a description and declaration of the module's components, executables, and connectors.
 
 Module metadata is also used during the module installation process to add and remove files to the Attivio installation. The minimum metadata file is:
 
@@ -114,7 +114,7 @@ This defines the following module configuration:
 * Files `ATTIVIO_HOME/lib/hadoop-annotations-2.7.2.jar` and `ATTIVIO_HOME/lib/hadoop-annotations-2.7.3.jar` will be moved to a backup directory for later restoration if they exist. 
 * This module does not care about patch level, but _does_ require that the Attivio version is 5.2.6 or later.
 
-### Adding your module to source control
+## Adding your module to source control
 
 Any module worth writing should be added to source control! Use GitHub's [excellent documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to add your module to a GitHub repository.
 

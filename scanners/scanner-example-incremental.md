@@ -1,6 +1,6 @@
 # Incremental Scanner Example
 
-The sample Attivio project contains the `com.sample.module.SampleIncrementalDataSourceScanner` sample scanner. As in the `com.sample.module.SampleDataSourceScanner` sample scanner, the scanner can be tested standalone from the `SampleIncrementalDataSourceScannerTest` Junit test and from the connectors admin page. 
+The sample Attivio project contains the `com.sample.module.SampleIncrementalDataSourceScanner` sample scanner. As in the `com.sample.module.SampleDataSourceScanner` sample scanner, the scanner can be tested standalone from the `SampleIncrementalDataSourceScannerTest` Junit test and from the connectors admin page.
 
 The incremental sample scanner demonstrates the following SDK capabilities.
 
@@ -15,22 +15,4 @@ The incremental sample scanner demonstrates the following SDK capabilities.
 | Using annotations to create menus | Observe the `@ConfigurationOptionInfo.Group` annotations. |
 | Using annotations to display and describe the scanner | Observe the `@ConfigurationOptionInfo` annotation. |
 | Using annotations to display and describe each option | Observe the `@ConfigurationOption` annotation with the `displayName`, `description` and `formEntryClass` arguments. |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

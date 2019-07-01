@@ -2,10 +2,9 @@
 
 To create a service that can be accessed through the `ServiceFactory`, there are a couple of things that need to be configured, below you will see this process using an example service `HelloWorldApi`:
 
-1.  Create an interface that extends `ExposedApi`.  
+1. Create an interface that extends `ExposedApi`.  
 
-
-   ```java
+```java
    package com.my.app
 
    @JmxManageable
@@ -21,14 +20,13 @@ To create a service that can be accessed through the `ServiceFactory`, there are
      public void helloWorld();
 
    }
-   ```
+```
 
-   If you would like your service to be accessible remotely it needs to support being used via jmx. Attivio provides JMX interactivity to classes which use annotations seen above \(used appropriately per method depending on desired type of interactivity\)  
+If you would like your service to be accessible remotely it needs to support being used via jmx. Attivio provides JMX interactivity to classes which use annotations seen above \(used appropriately per method depending on desired type of interactivity\)
 
-2. Create an implementation of your service that you intend to be used at runtime.  
+1. Create an implementation of your service that you intend to be used at runtime.  
 
-
-   ```java
+```java
    package com.my.app
 
    import org.slf4j.Logger;
@@ -52,9 +50,9 @@ To create a service that can be accessed through the `ServiceFactory`, there are
      }
 
    }
-   ```
+```
 
-3. Register the implementation as a bean in the `beans.xml` file \(located in the `src/main/resources` folder of the project\).  
+1. Register the implementation as a bean in the `beans.xml` file \(located in the `src/main/resources` folder of the project\).
 
    ```markup
    <?xml version="1.0" encoding="UTF-8"?>
@@ -70,10 +68,9 @@ To create a service that can be accessed through the `ServiceFactory`, there are
    </beans>
    ```
 
-4. If desired, create a mock implementation of your service.  
+2. If desired, create a mock implementation of your service.
 
-
-   ```java
+```java
    package com.my.app
 
    import org.slf4j.Logger;
@@ -97,32 +94,30 @@ To create a service that can be accessed through the `ServiceFactory`, there are
      }
 
    }
-   ```
+```
 
-   Mock implementations are used when testing. They are not strictly necessary if the runtime implementation of a service works in a testing environment.  
+Mock implementations are used when testing. They are not strictly necessary if the runtime implementation of a service works in a testing environment.
 
-5. Register your mock in `attivio.test.json`.  
+1. Register your mock in `attivio.test.json`.  
 
-
-   ```javascript
+```javascript
    {
      "testAssociations" : {
        "TestApi" : "com.my.app.MockHelloWorldApi"
      }
    }
-   ```
+```
 
-   If no mock is created, the runtime implementation must be specified in this file so that the `ServiceFactory` knows what service implementation to use during testing  
+If no mock is created, the runtime implementation must be specified in this file so that the `ServiceFactory` knows what service implementation to use during testing
 
-6. Access your service using the `ServiceFactory`.  
+1. Access your service using the `ServiceFactory`.  
 
-
-   ```java
+```java
    HelloWorldApi helloWorldApi = ServiceFactoryFactory.get().getService(HelloWorldApi.class);
    helloWorldApi.helloWorld();
-   ```
+```
 
-The service should now work whether it is being used in the node process, remotely in a separate process \(for example `aie-exec`\), or in a junit test. 
+The service should now work whether it is being used in the node process, remotely in a separate process \(for example `aie-exec`\), or in a junit test.
 
 The implementation in the test association in the `attivio.test.json` file will run during testing.
 
