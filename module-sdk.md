@@ -7,19 +7,13 @@ A new module can be generated using the maven archetype command. Generated modul
 ### Version 5.5.0
 
 ```text
-mvn archetype:generate \
-  -DarchetypeGroupId=com.attivio.platform.archetypes \
-  -DarchetypeArtifactId=attivio-archetype-module \
-  -DarchetypeVersion=5.5.0.5
+mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.0.5
 ```
 
 ### Version 5.5.1
 
 ```text
-mvn archetype:generate \
-  -DarchetypeGroupId=com.attivio.platform.archetypes \
-  -DarchetypeArtifactId=attivio-archetype-module \
-  -DarchetypeVersion=5.5.1.2
+mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-module -DarchetypeVersion=5.5.1.2
 ```
 
 This interactive command asks for a few parameters to drive the creation of the module:
