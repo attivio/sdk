@@ -3,10 +3,7 @@
 A new client project can be generated using the maven archetype command. Generated projects follow maven conventions for code and resource file locations.
 
 ```text
-mvn archetype:generate \
-  -DarchetypeGroupId=com.attivio.platform.archetypes \
-  -DarchetypeArtifactId=attivio-archetype-client \
-  -DarchetypeVersion=4.4.2.0
+mvn archetype:generate -DarchetypeGroupId=com.attivio.platform.archetypes -DarchetypeArtifactId=attivio-archetype-client -DarchetypeVersion=4.4.2.0
 ```
 
 This interactive command asks for a few parameters to drive the creation of the module:
