@@ -1,6 +1,6 @@
-# Attivio Platform SDK 5.6
+# Attivio Platform SDK 5.6.1
 
-### Attivio Modules
+## Attivio Modules
 
 Attivio modules allow custom code \(for example ingestion or query transformers\) to be added to your Attivio projects.
 
@@ -8,7 +8,7 @@ Attivio modules allow custom code \(for example ingestion or query transformers\
 
 Public site for SDK javadoc
 
-### Attivio Service Factory
+## Attivio Service Factory
 
 The Attivio Service Factory allows SDK users to access a set of Attivio services, or create custom services, that run on a node process.
 
@@ -18,7 +18,7 @@ The Attivio Service Factory allows SDK users to access a set of Attivio services
 
 {% page-ref page="service-factory/custom-service-testing.md" %}
 
-### Other guides
+## Other guides
 
 {% page-ref page="custom-executables.md" %}
 
