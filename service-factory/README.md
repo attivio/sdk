@@ -1,10 +1,10 @@
 # Service Factory
 
-### Usage
+## Usage
 
 The Service Factory can be accessed in a variety of ways using a `ServiceFactoryFactory`. Below are some examples of how to gain access to the `ContentStoreProvider`
 
-#### When running in an Attivio component:
+### When running in an Attivio component:
 
 ```java
 ServiceFactory serviceFactory = ServiceFactoryFactory.get();
@@ -12,7 +12,7 @@ serviceFactory.getService(ContentStoreProvider.class)
 ContentStoreProvider storeProvider = serviceFactory.getService(ContentStoreProvider.class)
 ```
 
-#### When running in a separate process \(such as in an `AttivioRunnable`\):
+### When running in a separate process \(such as in an `AttivioRunnable`\):
 
 ```java
 String projectName = "myProject";
@@ -22,7 +22,7 @@ ServiceFactory serviceFactory = ServiceFactoryFactory.getRemote(projectName, env
 ContentStoreProvider storeProvider = serviceFactory.getService(ContentStoreProvider.class)
 ```
 
-### List of Attivio services accessible through the Service Factory
+## List of Attivio services accessible through the Service Factory
 
 * `IngestClient`
 * `EventStoreApi`

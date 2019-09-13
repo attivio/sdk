@@ -1,4 +1,4 @@
-# Attivio Platform SDK 5.6.2
+# Attivio Platform SDK 5.6
 
 ## Attivio Modules
 
@@ -6,7 +6,7 @@ Attivio modules allow custom code \(for example ingestion or query transformers\
 
 {% page-ref page="module-sdk.md" %}
 
-Public site for SDK javadoc
+[Public site for SDK javadoc](https://attivio.github.io/sdk-5.6-javadoc)
 
 ## Attivio Service Factory
 
@@ -25,3 +25,4 @@ The Attivio Service Factory allows SDK users to access a set of Attivio services
 {% page-ref page="components/" %}
 
 {% page-ref page="scanners/" %}
+

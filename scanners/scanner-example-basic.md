@@ -7,17 +7,17 @@ The sample Attivio project contains the `com.sample.module.SampleDataSourceScann
 
 Examine how the following phases of the scanner life-cycle are implemented below.
 
-### Configuring the scanner
+## Configuring the scanner
 
 * Observe the `@ConfigurationOptionInfo` annotation that describes the scanner in the UI administration page and specifies its preferred workflow.
 * Observe the `setTestText` and `getTestText` configuration methods.
 * Observe the `@ConfigurationOptionInfo` `@ConfigurationOption` annotation that tells the UI how to present and how to process the configuration options.
 
-### Validating the configuration
+## Validating the configuration
 
 * Observe the `validateConfiguration` optional method that throws an exception if `testText` was not configured
 
-### Creating documents and feeding the workflow
+## Creating documents and feeding the workflow
 
 * Observe the start method:  
   * It creates a document with the "1" document id.
