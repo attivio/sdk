@@ -1,4 +1,4 @@
-# Attivio Platform SDK 5.6.1
+# Attivio Platform SDK 5.6.2
 
 ## Attivio Modules
 
