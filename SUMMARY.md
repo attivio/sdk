@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Attivio Platform SDK 5.6.2](README.md)
+* [Attivio Platform SDK 5.6.3](README.md)
 * [Module SDK](module-sdk.md)
 * [Service Factory](service-factory/README.md)
   * [Creating a Custom Service](service-factory/custom-service-creating.md)
