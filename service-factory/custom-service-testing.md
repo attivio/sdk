@@ -18,7 +18,18 @@ Custom mock services can be written as needed for specific projects and will ove
 
 ### Cleanup
 
-Mock services will sometimes have in memory fields used to cache data that is handled at runtime by a more complicated data storage mechanism. For all provided mocks, any such caches are effectively cleared when a new instance of the mock object is created. The nature of the `ServiceFactory` is such that instances of mock services \(and therefore mock data\) will persist through all tests run in a single process. 
+Mock services will sometimes have in-memory fields used to cache data that is handled at runtime by a more complicated data storage mechanism. For all provided mocks, any such caches are effectively cleared when a new instance of the mock object is created. The nature of the `ServiceFactory` is such that instances of mock services \(and therefore mock data\) will persist through all tests run in a single process. 
 
-This is generally not the desired behavior when testing and to avoid this, the `SdkRule` in the Attivio SDK can be declared, instantiated, and properly annotated in order to have all references to existing mock services cleared so they are reinstantiated when they are next fetched by the `ServiceFactory`. To learn more about Junit Rules, see [this page](https://junit.org/junit4/javadoc/4.12/org/junit/Rule.html)
+This is generally not the desired behavior when testing and to avoid this, the `SdkRule` in the Attivio SDK can be declared, instantiated, and properly annotated in order to have all references to existing mock services cleared so they are reinstantiated when they are next fetched by the `ServiceFactory`:
 
+```Java
+public class MySampleUnitTest {
+
+  @Rule
+  public SdkRule rule = new SdkRule();
+
+  @Test
+  // test code here
+}
+```
+To learn more about JUnit Rules, see [this page](https://junit.org/junit4/javadoc/4.12/org/junit/Rule.html).
